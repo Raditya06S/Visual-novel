@@ -1,4 +1,4 @@
-﻿# The script of the game goes in this file.
+# The script of the game goes in this file.
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -77,23 +77,23 @@ label common:
                 "Setelah itu aku menghabiskan waktu luang ku untuk mempersiapkan diri jika tiba waktunya untuk aku interview"
                 "Walaupun ini pengalaman yang asing untuk ku aku harus bisa melalui ini"
                 "Akan kupastikan aku berhasil agar usaha ku selama ini tidak terbuang sia-sia"
-                $ route = 1
+                $ route = "Akuntan"
                 jump interview
 
             "Auditor":
-                $ route = 2
+                $ route = "Auditor"
                 jump interview
 
             "Konsultan Pajak":
-                $ route = 3
+                $ route = "Konsultan Pajak"
                 jump interview
 
             "Data Analis":
-                $ route = 4
+                $ route = "Data Analis"
                 jump interview
 
             "Konsultan Bisnis":
-                $ route = 5
+                $ route = "Konsultan Bisnis"
                 jump interview
 
 label interview:
@@ -110,24 +110,17 @@ label interview:
     "Setelah itu aku melanjutkan perkenalan diri dari riwayat pendidikan, pengalaman, keahlian, sampai pencapaian yang pernah saya capai."
     "Setelah itu pak Paul beberapa kali melemparkan pertanyan kepadaku, tapi dengan latihan dan riset yang telah lakukan dengan sebelumnya."
     "Aku berhasil melalui pertanyaan yang dilemparkan padaku dengan mudah."
-    hrd "Selamat"
+    hrd "Selamat anda diterima sebagai [route]"
 
-    if route == 1:
+    if route == "Akuntan":
         jump accountant
-    elif route == 2:
-        "fail"
-
-
-label auditor:
-    "Auditor"
-
-label tax:
-    "Konsultan Pajak"
-
-label dataAnalyst:
-    "Data Analis"
-
-label business:
-    "Konsultan bisnis"
+    elif route == "Auditor":
+        jump auditor
+    elif route == "Konsultan Pajak":
+        jump tax
+    elif route == "Data Analis":
+        jump analyst
+    elif route == "Konsultan Bisnis":
+        jump business
 
     return
