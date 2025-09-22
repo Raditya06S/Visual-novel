@@ -1,0 +1,2 @@
+label accountant:
+    "Akuntan"
