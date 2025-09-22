@@ -67,16 +67,6 @@ label common:
     while True:
         menu:
             "Akuntan":
-                main "Oke aku udah putusin, aku yakin ini pasti posisi yang cocok buat aku!"
-                main "Sebagai anak jurusan akuntansi gak mungkin aku bisa gagal disini"
-                main "Sebaliknya aku yakin aku bisa naik jabatan cepat disisni"
-                main "Waktunya mempersiapkan diri buat interview, aku harus pastiin buat gak gagal dalam percobaan pertama"
-
-                image bg_sky = im.Scale("bg sky.jpg", 1920, 1080)
-                scene bg_sky with dissolve
-                "Setelah itu aku menghabiskan waktu luang ku untuk mempersiapkan diri jika tiba waktunya untuk aku interview"
-                "Walaupun ini pengalaman yang asing untuk ku aku harus bisa melalui ini"
-                "Akan kupastikan aku berhasil agar usaha ku selama ini tidak terbuang sia-sia"
                 $ route = "Akuntan"
                 jump interview
 
@@ -95,6 +85,17 @@ label common:
             "Konsultan Bisnis":
                 $ route = "Konsultan Bisnis"
                 jump interview
+
+            main "Oke aku udah putusin, aku yakin ini pasti posisi yang cocok buat aku!"
+            main "Sebagai anak jurusan akuntansi gak mungkin aku bisa gagal disini"
+            main "Sebaliknya aku yakin aku bisa naik jabatan cepat disisni"
+            main "Waktunya mempersiapkan diri buat interview, aku harus pastiin buat gak gagal dalam percobaan pertama"
+
+            image bg_sky = im.Scale("bg sky.jpg", 1920, 1080)
+            scene bg_sky with dissolve
+            "Setelah itu aku menghabiskan waktu luang ku untuk mempersiapkan diri jika tiba waktunya untuk aku interview"
+            "Walaupun ini pengalaman yang asing untuk ku aku harus bisa melalui ini"
+            "Akan kupastikan aku berhasil agar usaha ku selama ini tidak terbuang sia-sia"
 
 label interview:
     scene black with dissolve
@@ -124,3 +125,4 @@ label interview:
         jump business
 
     return
+
