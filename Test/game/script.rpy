@@ -114,6 +114,7 @@ label interview:
     hrd "Selamat anda diterima sebagai [route]"
 
     if route == "Akuntan":
+        $ job = "akuntan"
         jump accountant
     elif route == "Auditor":
         jump auditor
@@ -125,5 +126,6 @@ label interview:
         jump business
 
     return
+
 
 
