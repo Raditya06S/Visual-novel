@@ -52,10 +52,8 @@ randP "Apabila Anda mencatat menjadi 8 unit maka 2 unit yang tidak tercatat akan
 
 menu:
     "Catat 8 unit":
-        $ ending = "bad1"
         jump bad1
     "Catat 10 unit": 
-        $ ending = "half"
         jump half
 
 label bad1:
@@ -114,10 +112,8 @@ main"Ambil atau engga ya tawaran menarik ini?"
 
 menu:
     "Terima Penawaran":
-        $ ending = "finbad"
         jump finbad
     "Tolak Penawaran": 
-        $ ending = "fingood"
         jump fingood
 
 label finbad:
@@ -164,3 +160,4 @@ label fingood:
 
 
 return 
+
