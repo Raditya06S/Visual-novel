@@ -7,6 +7,9 @@
 default main = "Protagonist"
 define mc = Character("[main]")
 default hrd = "Paul"
+define randP = Character("Orang misterius", color="#e81010")
+define bos = Character("Bos Brando", color="#d8ef0ad2")
+define rekan = Character("Steve", color="#2c0aefd2")
 
 # The game starts here.
 default route = 0
@@ -117,6 +120,7 @@ label interview:
         $ job = "akuntan"
         jump accountant
     elif route == "Auditor":
+        $ job = "auditor"
         jump auditor
     elif route == "Konsultan Pajak":
         jump tax
@@ -126,6 +130,7 @@ label interview:
         jump business
 
     return
+
 
 
 
