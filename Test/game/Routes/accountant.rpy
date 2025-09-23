@@ -28,7 +28,7 @@ HRD "Apakah ada yang ingin ditanyakan?"
         
 HRD "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
 
-scene bg sky 
+scene bg_sky 
 scene bg office
 "Pada hari pertama kerja, [main] menerima pekerjaaan dari klien yang berasal dari perusahaan ABC yang bergerak di industri manufaktur. "
 "jobdesk utama anda adalah mencatat transaksi pembelian yang dilakukan perusahaan klien dari perusahaan rekanan klien vendor."
@@ -61,7 +61,7 @@ label bad1:
 
     randP "oke untuk 2 unitnya akan dikirimkan di esok hari, terima kasih. " 
          #*Telpon ditutup* 
-    scene bg sky
+    scene bg_sky
     "Pada esok hari ternyata benar, ada paket yang masuk ke kantor dengan atas nama [main]"
 
     scene bg office 
@@ -160,4 +160,5 @@ label fingood:
 
 
 return 
+
 
