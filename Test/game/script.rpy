@@ -3,16 +3,10 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-#Chara
-default main = "Protagonist"
-define mc = Character("[main]")
-default hrd = "Paul"
-define randP = Character("Orang misterius", color="#e81010")
-define bos = Character("Bos Brando", color="#d8ef0ad2")
-define rekan = Character("Steve", color="#2c0aefd2")
+
 
 # The game starts here.
-default route = 0
+default job = 0
 
 label start:
 
@@ -70,24 +64,26 @@ label common:
     while True:
         menu:
             "Akuntan":
-                $ route = "Akuntan"
+                $ job = "Akuntan"
                 jump interview
 
             "Auditor":
-                $ route = "Auditor"
+                $ job = "Auditor"
                 jump interview
 
             "Konsultan Pajak":
-                $ route = "Konsultan Pajak"
+                $ job = "Konsultan Pajak"
                 jump interview
 
             "Data Analis":
-                $ route = "Data Analis"
+                $ job = "Data Analis"
                 jump interview
 
             "Konsultan Bisnis":
-                $ route = "Konsultan Bisnis"
+                $ job = "Konsultan Bisnis"
                 jump interview
+            
+
 
 label interview:
     main "Oke aku udah putusin, aku yakin ini pasti posisi yang cocok buat aku!"
@@ -114,23 +110,17 @@ label interview:
     "Setelah itu aku melanjutkan perkenalan diri dari riwayat pendidikan, pengalaman, keahlian, sampai pencapaian yang pernah saya capai."
     "Setelah itu pak Paul beberapa kali melemparkan pertanyan kepadaku, tapi dengan latihan dan riset yang telah lakukan dengan sebelumnya."
     "Aku berhasil melalui pertanyaan yang dilemparkan padaku dengan mudah."
-    hrd "Selamat anda diterima sebagai [route]"
+    hrd "Selamat anda diterima sebagai [job] di perusahaan kami"
 
-    if route == "Akuntan":
-        $ job = "akuntan"
+    if job == "Akuntan":
         jump accountant
-    elif route == "Auditor":
-        $ job = "auditor"
+    elif job == "Auditor":
         jump auditor
-    elif route == "Konsultan Pajak":
+    elif job == "Konsultan Pajak":
         jump tax
-    elif route == "Data Analis":
+    elif job == "Data Analis":
         jump analyst
-    elif route == "Konsultan Bisnis":
+    elif job == "Konsultan Bisnis":
         jump business
 
     return
-
-
-
-
