@@ -13,6 +13,16 @@ scene bg 3
 main "Lho Email dari siapa ini? *Baca email* Oh, syukurlah aku masuk tahap interview "
 #popup email pernyataan akan di interview
 
+image lamaran kerja = im.FactorScale("lamaran kerja.png", 0.5, 0.5)
+transform posisi_resume:
+    xalign 0.5
+    yalign 0.2
+window hide
+show lamaran kerja at posisi_resume 
+pause #2
+hide lamaran_kerja onlayer screens with dissolve
+window show 
+
 "Hari Interview pun tiba"
         
 scene bg office
@@ -160,5 +170,6 @@ label fingood:
 
 
 return 
+
 
 
