@@ -6,6 +6,13 @@
 
 
 # The game starts here.
+default main = "Protagonist"
+define mc = Character("[main]")
+define HRD = Character("eileen", color="#1cb87c")
+define randP = Character("Orang misterius", color="#e81010")
+define bos = Character("Bos Brando", color="#d8ef0ad2")
+define rekan = Character("Steve", color="#2c0aefd2")
+define Kakak = Character("Kakak", color="#f802d3f5")
 default job = 0
 
 label start:
@@ -104,12 +111,12 @@ label interview:
     "Aku sudah bekerja keras sampai saat ini jadi akan kupastikan aku diterima di perusahaan ini"
     main "Selamat siang"
     "Saat aku memasuki ruangan interview terdapat seorang pria dengan penampilan rapih yang menyambutku"
-    hrd "Selamat siang. Nama saya adalah Paul, saya yang akan bertanggung jawab sebagai interviewer hari ini."
+    HRD "Selamat siang. Nama saya adalah Paul, saya yang akan bertanggung jawab sebagai interviewer hari ini."
     main "Selamat siang, nama saya [main] saya adalah lulusan Akuntansi dari Universitas A."
     "Setelah itu aku melanjutkan perkenalan diri dari riwayat pendidikan, pengalaman, keahlian, sampai pencapaian yang pernah saya capai."
     "Setelah itu pak Paul beberapa kali melemparkan pertanyan kepadaku, tapi dengan latihan dan riset yang telah lakukan dengan sebelumnya."
     "Aku berhasil melalui pertanyaan yang dilemparkan padaku dengan mudah."
-    hrd "Selamat anda diterima sebagai [job] di perusahaan kami"
+    HRD "Selamat anda diterima sebagai [job] di perusahaan kami"
 
     if job == "Akuntan":
         jump accountant
@@ -123,4 +130,5 @@ label interview:
         jump business
 
     return
+
 
