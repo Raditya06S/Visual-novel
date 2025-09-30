@@ -62,11 +62,11 @@ randP "Apabila Anda mencatat menjadi 8 unit maka 2 unit yang tidak tercatat akan
 
 menu:
     "Catat 8 unit":
-        jump bad1
+        jump badAccountant
     "Catat 10 unit": 
-        jump half
+        jump halfAccountant
 
-label bad1:
+label badAccountant:
     main "baik pak, untuk pencatatannya sudah saya tulis sebesar pembelian 8 unit."
 
     randP "oke untuk 2 unitnya akan dikirimkan di esok hari, terima kasih. " 
@@ -92,7 +92,7 @@ label bad1:
 
     
 
-label half:
+label halfAccountant:
     main "Mohon maaf pak, apabila disini tercatat pembeliannya sejumlah 10 unit saya akan tetap catat pembelian sesuai transaksi. Terima kasih "
 
  # *Menutup telepon* 
@@ -122,11 +122,11 @@ main"Ambil atau engga ya tawaran menarik ini?"
 
 menu:
     "Terima Penawaran":
-        jump finbad
+        jump finbadAccountant
     "Tolak Penawaran": 
-        jump fingood
+        jump fingoodAccountant
 
-label finbad:
+label finbadAccountant:
     main "Boleh lah aku coba, toh.., masih muda butuh pengalaman banyak *percaya diri meningkat*"
 
     scene bg_sky
@@ -170,6 +170,7 @@ label fingood:
 
 
 return 
+
 
 
 
