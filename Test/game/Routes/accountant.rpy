@@ -58,7 +58,7 @@ main "Baik pak, ada yang bisa saya bantu?"
 
 randP "Bisa kah Anda mencatat pembelian barang X yang ada di transaksi perusahaan menjadi 8 unit saja? "
 
-randP "Apabila Anda mencatat menjadi 8 unit maka 2 unit yang tidak tercatat akan menjadi milik Anda."
+randP "Apabila Anda mencatat menjadi 8 unit nantinya akan saya transfer uang sebesar 10Juta Rupiah."
 
 menu:
     "Catat 8 unit":
@@ -67,27 +67,24 @@ menu:
         jump halfAccountant
 
 label badAccountant:
-    main "baik pak, untuk pencatatannya sudah saya tulis sebesar pembelian 8 unit."
+   main "baik pak, untuk pencatatannya sudah saya tulis sebesar pembelian 8 unit."
 
-    randP "oke untuk 2 unitnya akan dikirimkan di esok hari, terima kasih. " 
+    randP "oke untuk Transfer uang sebesar 10 Juta di esok hari, Terima kasih.  " 
          #*Telpon ditutup* 
     scene bg_sky
-    "Pada esok hari ternyata benar, ada paket yang masuk ke kantor dengan atas nama [main]"
+    "Hingga pada hari esok ternyata benar, ada Transfer yang masuk ke akun [main]"
 
     scene bg office 
-    main "Oh paket atas nama saya."
-        #*buka paket isi Uphone
-    main "Wihhh mantap paket Uphone kemarin "    
-    bos "Lho Uphone versi terbaru? Kamu baru beli? "
-    main "hehehe, iya baru beli kemarin. "
+    main "wih transferannya sudah masuk dong. ."
+    main "Enaknya dipake buat beli apa ya???  "    
+    bos "Lho kamu dapet Transferan? "
+    main "hehehe iya, soalnya kemarin baru aja selesaiin tugas khusus soalnya.  "
+    bos "Lho tugas khusus?"
 
-    "[main], tidak mengetahui kalau posisinya dalam bahaya. Karena pada akhir periode produksi, perusahaan melakukan opname yang dilakukan oleh auditor."
-
-    "Setelah  auditor menganalisa pembelian yang telah dilakukan berdasarkan pencatatan akuntan, diketahui ternyata ada salah satu karyawan yang telah menggelapkan dana perusahaan untuk membeli Uphone sebanyak 10 unit, namun tercatat hanya 8 unit.  "
-
-    "Pembelian tersebut tercatat dalam transaksi pembelian perusahaan dan menggunakan budget perusahaan."
-
-    "Untuk selanjutnya karyawan yang menggelapkan dana perusahaan ABC dipecat secara tidak hormat, dan kamu sebagai akuntan yang terlibat dalam fraud dengan cara menerima barang hasil penggelapan dana juga ikut dipecat dan dipidanakan "
+    "[main], tidak mengetahui kalau posisinya dalam bahaya. Karena pada akhir periode produksi, perusahaan melakukan opname yang dilakukan oleh auditor. Setelah  auditor menganalisa pembelian yang telah dilakukan berdasarkan pencatatan akuntan, diketahui ternyata ada salah satu karyawan yang telah menggelapkan dana perusahaan untuk membeli Uphone sebanyak 10 unit, namun tercatat hanya 8 unit. " 
+    "yang ternyata pembelian tersebut tercatat dalam transaksi pembelian perusahaan dan menggunakan budget perusahaan. " 
+    "Untuk selanjutnya karyawan yang menggelapkan dana perusahaan ABC dipecat secara tidak hormat, dan kamu sebagai akuntan yang terlibat dalam fraud dengan cara menerima suap untuk menutupi penggelapan dana juga ikut dipecat dan dipidanakan "
+return
 
 
     
@@ -170,6 +167,7 @@ label fingood:
 
 
 return 
+
 
 
 
