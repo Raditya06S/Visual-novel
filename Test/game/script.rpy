@@ -13,6 +13,7 @@ define randP = Character("Orang misterius", color="#e81010")
 define bos = Character("Bos Brando", color="#d8ef0ad2")
 define rekan = Character("Steve", color="#2c0aefd2")
 define Kakak = Character("Kakak", color="#f802d3f5")
+define staffKopi = Character("Staff Coffe Shop", color="#80130b73")
 default job = 0
 
 label start:
@@ -130,5 +131,6 @@ label interview:
         jump business
 
     return
+
 
 
