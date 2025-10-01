@@ -1,4 +1,4 @@
-label anaklyst:
+label analyst:
 
 #menampilkan gambar waktu isi lamaran
 
@@ -71,3 +71,4 @@ label halfAnalyst:
     "Maka dari itu mengingat Tumbass belum ada menu varian Matcha, maka Tumbass pun meracik 2 Menu baru, Coffe-Matcha dan Matcha latte"
 
     "Dan dari keputusan membuat 2 menu baru tersebut, ternyata membuat dampak positif, yang dimana penjualan Tumbass meningkat drastis dikarenakan hampir keseluruhan pelanggan yang datang, memesan kedua menu terbaru tersebut dikarenkan memiliki rasa yang unik dan berbeda dengan matcha yang ada di coffee shop diluar. Sehingga dari keputusan yang kamu ambil adalah benar. "
+
