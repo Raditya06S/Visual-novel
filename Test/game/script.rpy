@@ -15,6 +15,7 @@ define rekan = Character("Steve", color="#2c0aefd2")
 define Kakak = Character("Kakak", color="#f802d3f5")
 define staffKopi = Character("Staff Coffe Shop", color="#80130b73")
 define managerKeu = Character("Manager Keuangan", color="#09bb09f5")
+define staff = Character("Parto", color="#aba0a0d2")
 default job = 0
 default gender = 'null'
 
@@ -144,6 +145,7 @@ label interview:
         jump business
 
     return
+
 
 
 
