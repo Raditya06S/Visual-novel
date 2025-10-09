@@ -16,6 +16,7 @@ define Kakak = Character("Kakak", color="#f802d3f5")
 define staffKopi = Character("Staff Coffe Shop", color="#80130b73")
 define managerKeu = Character("Manager Keuangan", color="#09bb09f5")
 default job = 0
+default gender = 'null'
 
 label start:
 
@@ -32,9 +33,20 @@ label start:
             menu:
                 "Yes":
                     "Next"
-                    jump common
+                    jump gender_choice
                 "No":
                     pass
+
+label gender_choice:
+    "Apa jenis kelaminmu?"
+    while True:
+        menu:
+            "Laki-laki":
+                $ gender = 'male'
+                jump common
+            "Perempuan":
+                $ gender = 'female'
+                jump common
 
 label common:
     # Show a background. This uses a placeholder by default, but you can
@@ -132,6 +144,7 @@ label interview:
         jump business
 
     return
+
 
 
 
