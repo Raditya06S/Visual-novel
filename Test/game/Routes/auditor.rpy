@@ -1,7 +1,7 @@
 label auditor:
 
 scene bg sky
-
+"*Hari Pertama bekerja sebagai Auditor* "
 "Pada hari pertama kerja, [main] menerima pekerjaaan dari klien yang berasal dari perusahaan BBKN yang merupakan sebuah perusahaan startup yang bergerak di industri Perbankan, jobdesk utama kamu adalah mengecek setiap transaksi arus kas, baik arus kas masuk dan keluar yang ada di perusahaan."
 
 scene bg office
@@ -75,4 +75,5 @@ label fingoodAuditor:
     "Dan tindakan yang diambil oleh perusahaan BBKN yaitu membuat laporan baru sesuai dengan temuan yang ditemukan. Sehingga dari hal tersebut investor tetap percaya dan perusahaan BBKN tetap berjalan seperti umumnya"
 
     return
+
 
