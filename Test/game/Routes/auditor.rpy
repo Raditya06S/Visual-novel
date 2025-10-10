@@ -18,15 +18,15 @@ main "Lho Email dari siapa ini? *Baca email* Oh, syukurlah aku masuk tahap inter
 scene bg office
 
 show eileen senang       
-HRD "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
+hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
 
-HRD "selamat [main] anda diterima di perusahaan kami, sebagai [job] "
+hrd "selamat [main] anda diterima di perusahaan kami, sebagai [route] "
 
-HRD "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job] ."
+hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [route] ."
         
-HRD "Apakah ada yang ingin ditanyakan?"
+hrd "Apakah ada yang ingin ditanyakan?"
         
-HRD "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
+hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
 
 scene bg sky
 
@@ -46,38 +46,39 @@ main "hmm, cash flow from operating activities udah sesuai, tapi kok cash flow f
 
 "Tidak lama ada telepon masuk dari Kakak melalui hp*"
 
-Kakak "Halo [main], kamu sekarang  sedang mengaudit perusahaan aku ya?. Kalau boleh siapa yang mengaudit, kenal kah sama rekan kerja kamu?, gimana orangnya? "
+kakak "Halo [main], kamu sekarang  sedang mengaudit perusahaan aku ya?. Kalau boleh siapa yang mengaudit, kenal kah sama rekan kerja kamu?, gimana orangnya? "
 main "Halo kak, kok bisa tau kalo perusahaan aku yang mengaudit perusahaan kakak? "
-Kakak "iya dong aku tau, soalnya BBKN udah 2 kali jadi partner eksternal audit sama perusahaan NJB"
+kakak "iya dong aku tau, soalnya BBKN udah 2 kali jadi partner eksternal audit sama perusahaan NJB"
 main " Wah iya ka?, aku baru tau. Terus kalo boleh tahu ada apa ya kak kok telpon?"
-Kakak " ini aku mau infoin, kalau kamu sadar di bagian pencatatan akun Cash flow from financing activities di perusahaan BBKN itu ada yang aneh ga?"
+kakak " ini aku mau infoin, kalau kamu sadar di bagian pencatatan akun Cash flow from financing activities di perusahaan BBKN itu ada yang aneh ga?"
 main "Iya, kok......  tahu kak?"
-Kakak " Iya soalnya di perusahaan ku itu sedang mengalami masa sulit, jadi pencatatan dan pembagian Dividen kepada shareholder sebetulnya ngga sesuai."
+kakak " Iya soalnya di perusahaan ku itu sedang mengalami masa sulit, jadi pencatatan dan pembagian Dividen kepada shareholder sebetulnya ngga sesuai."
 main " Aduh gimana ya kak? Terus ini mau di apain nih?"
-Kakak "jadi kalo kamu liat di pencatatan itu nilainya lebih gede kan? Nah itu gak perlu dianggap temuan, soalnya buat memancing calon investor baru buat dapetin modal tambahan lagi...."
+kakak "jadi kalo kamu liat di pencatatan itu nilainya lebih gede kan? Nah itu gak perlu dianggap temuan, soalnya buat memancing calon investor baru buat dapetin modal tambahan lagi...."
 main "hmm gimana ya...."
 
-menu:
-    "Biarkan":
-        jump badAuditor
-    "Catat sebagai temuan": 
-        jump halfAuditor
+while True:
+    menu:
+        "Biarkan":
+            jump badAuditor
+        "Catat sebagai temuan": 
+            jump halfAuditor
 
 
 label badAuditor:
-  main "Oke deh kak, aku biarin saja yaa... "  
-  Kakak "okee Thankyouuu yaa"
-  "Pada saat akhir periode akuntansi (akhir tahun). Laporan sudah dipublikasikan oleh perusahaan BBKN, namun dikarenakan publik tidak mudah dibodohi dengan laporan yang tidak benar"
-  "para investor mencabut segala macam bentuk investasi yang ada di BBKN. Sehingga kini BBKN menyatakan diri jika perusahaannya bangkrut, dan kakak-mu juga dipecat."
+main "Oke deh kak, aku biarin saja yaa... "  
+kakak "okee Thankyouuu yaa"
+"Pada saat akhir periode akuntansi (akhir tahun). Laporan sudah dipublikasikan oleh perusahaan BBKN, namun dikarenakan publik tidak mudah dibodohi dengan laporan yang tidak benar"
+"para investor mencabut segala macam bentuk investasi yang ada di BBKN. Sehingga kini BBKN menyatakan diri jika perusahaannya bangkrut, dan kakak-mu juga dipecat."
   
-  return
+return
 
 
 label halfAuditor:
     main "waduh sorry kak, untuk hal ini aku gk bisa bantu, jadi aku catat apa adanya kak.."
-    Kakak "waduh tolong dong"
+    kakak "waduh tolong dong"
     main "wah aku gk berani bantu banyak kak, soalnya ini aja pekerjaan pertama aku sebagai auditor."
-    Kakak " beneran gk bisa? Nanti aku beliin hp baru deh..."
+    kakak " beneran gk bisa? Nanti aku beliin hp baru deh..."
 
 
 menu:
@@ -88,7 +89,7 @@ menu:
 
 label finbadAuditor:
     main "Yaudah deh aku biarin buat gk jadi temuan"
-    Kakak "Asiikkk, nanti HPnya aku beliin pas pulang kerja yaa. Thankyouuuu"
+    kakak "Asiikkk, nanti HPnya aku beliin pas pulang kerja yaa. Thankyouuuu"
     "Pada saat akhir periode akuntansi (akhir tahun). Laporan sudah dipublikasikan oleh perusahaan BBKN, namun dikarenakan publik tidak mudah dibodohi dengan laporan yang tidak benar," 
     "maka para investor mencabut segala macam bentuk investasi yang ada di BBKN. Sehingga kini BBKN menyatakan diri jika perusahaannya bangkrut, dan kakak-mu juga dipecat."
     "Lalu pada saat kamu menelpon kakakmu, ada salah satu rekan kerja yang mendengar percakapan selama di telepon, sehingga atasan mu itu melaporkan ke pimpinan perusahaan dan kamu pun juga dipecat akibat adanya kasus suap dari perusahaan rekanan. "
@@ -97,7 +98,7 @@ label finbadAuditor:
 
 label fingoodAuditor:
     main "tetep kak aku gk bisa, soalnya ini menyangkut pekerjaan aku juga, kalo aku biarin yang kenapa kenapa aku juga"
-    Kakak " oh... yaudah deh, makasih ya"
+    kakak " oh... yaudah deh, makasih ya"
     "Pada akhirnya, temuan yang kamu dapatkan dicatat sebagai temuan. Dan dari temuan tersebut diberikan ke pimpinan manajemen perusahaan BBKN." 
     "Dan tindakan yang diambil oleh perusahaan BBKN yaitu membuat laporan baru sesuai dengan temuan yang ditemukan. Sehingga dari hal tersebut investor tetap percaya dan perusahaan BBKN tetap berjalan seperti umumnya"
     return
