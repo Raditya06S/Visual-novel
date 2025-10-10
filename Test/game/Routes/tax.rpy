@@ -11,11 +11,11 @@ main "Lho Email dari siapa ini? *Baca email* Oh, syukurlah aku masuk tahap inter
 "Hari interview pun tiba"
 "*Scene Interview*"
 
-HRD "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami, "
-HRD "Selamat [main],anda diterima di perusahaan kami, sebagai [job]"
-HRD "Berikut jobdesk *Menampilkan selembaran jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job]"
-HRD " Apakah ada yang ingin ditanyakan?"
-HRD "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya."
+hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami, "
+hrd "Selamat [main],anda diterima di perusahaan kami, sebagai [route]"
+hrd "Berikut jobdesk *Menampilkan selembaran jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [route]"
+hrd " Apakah ada yang ingin ditanyakan?"
+hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya."
 
 "Pada hari pertama kamu masuk, kamu ditugaskan untuk mengurus perusahaan XBJ yang bergerak dibidang manufaktur. PT XBJ sendiri pun merupakan induk perusahaan NBJ yang saat ini sedang menaungi kamu."
 "Di PT XBJ pun membutuhkan seorang posisi Taxation untuk mengurus sistematika perpajakan dari penghasilan operasional perusahaan. "
@@ -24,7 +24,7 @@ main "akhirnya bisa ngerasain kerja di perusahaan induk."
 main "oh ya mana sekarang bulan maret lagi......., pasti gk lama lagi ada kerjaan terkait pelaporan pajak perusahaan."
 "*Tidak lama ada atasan kamu yang memiliki posisi sebagai manager keuangan di perusahaan datang menghampiri kamu* "
 
-managerKeu "Halo[main], kamu pasti baru ditugaskan disini ya? "
+managerKeu "Halo [main], kamu pasti baru ditugaskan disini ya? "
 main " hehehe iya bu betul"
 managerKeu "Yang semangat yah, soalnya sebentar lagi sudah masuk ke masa pelaporan pajak, jadi harus yang rajin yahhh"
 main "Oke siap buu"
@@ -41,11 +41,13 @@ managerKeu "Kata siapa bagus? Kalau pendapatan kita tinggi, otomatis pajak yang 
 managerKeu "nah berhubung sebentar lagi kan pelaporan SPT, kira-kira kamu bisa ngecatat pendapatan perusahaan kita lebih kecil dari sebenarnya gk nih? Kalo bisa saya ada bonus buat kamu berhubungan pendapatan kita sedang tinggi nih. "
 main "Duh.... gimana nih ya....."
 
-menu:
-    "Kurangi pencatatan":
-        jump badTaxation
-    "Catat Sesuai Pendapatan": 
-        jump goodTaxation
+while True:
+    menu:
+        "Kurangi pencatatan":
+            jump badTaxation
+        "Catat Sesuai Pendapatan": 
+            jump goodTaxation
+
 
 
 label badTaxation:
@@ -72,4 +74,3 @@ label goodTaxation:
 
     "Dari keputusan yang kamu ambil, meskipun terlihat pendapatannya besar yang mengakibatkan pembayarannya besar tapi keputusan yang kamu ambil sudah betul dikarenakan perusahaan juga bisa mengkreditkan pajak yang dibayar."
     "Oleh karena itu, dari performa kamu yang  jeli dalam kasus perpajakan di PT XBJ, maka kamu dipromosikan sebagai Head Staff Taxation. "
-
