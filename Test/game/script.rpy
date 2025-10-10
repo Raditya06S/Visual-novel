@@ -99,7 +99,7 @@ label common:
 
 
 label interview:
-    main "Oke aku udah putusin, aku yakin ini pasti posisi yang cocok buat aku!"
+     main "Oke aku udah putusin, aku yakin ini pasti posisi yang cocok buat aku!"
     main "Sebagai anak jurusan akuntansi gak mungkin aku bisa gagal disini"
     main "Sebaliknya aku yakin aku bisa naik jabatan cepat disisni"
     main "Waktunya mempersiapkan diri buat interview, aku harus pastiin buat gak gagal dalam percobaan pertama"
@@ -108,21 +108,34 @@ label interview:
     "Setelah itu aku menghabiskan waktu luang ku untuk mempersiapkan diri jika tiba waktunya untuk aku interview"
     "Walaupun ini pengalaman yang asing untuk ku aku harus bisa melalui ini"
     "Akan kupastikan aku berhasil agar usaha ku selama ini tidak terbuang sia-sia"
-
+    
+    
     scene black with dissolve
-    scene bg office with dissolve
-    "Sudah sebulan sejak hari itu, saat ini aku berada di kantor perusahaan PT.NJB untuk interview."
-    "Seminggu yang lalu aku menerima pesan bahwa saya telah terpilih untuk mengikuti interview untuk posisi akuntan"
+    main "Oke lamaran udah dikirim, sekarang tinggal tunggu kabar dari HRD aja."
+    scene bg_sky with dissolve
+    "satu minggu kemudian"   
+    "Lho Email dari siapa ini? *Baca email* Oh, syukurlah aku masuk tahap interview "
     "Saat itu aku merasa sangat senang. Tapi ini belum apa-apa, masih ada interview yang perlu aku hadapi sebelum memasuki dunia kerja"
     "Aku sudah bekerja keras sampai saat ini jadi akan kupastikan aku diterima di perusahaan ini"
+    scene bg office with dissolve
+
     main "Selamat siang"
     "Saat aku memasuki ruangan interview terdapat seorang pria dengan penampilan rapih yang menyambutku"
+    show eileen senang   
     hrd "Selamat siang. Nama saya adalah Paul, saya yang akan bertanggung jawab sebagai interviewer hari ini."
+    
     main "Selamat siang, nama saya [main] saya adalah lulusan Akuntansi dari Universitas A."
     "Setelah itu aku melanjutkan perkenalan diri dari riwayat pendidikan, pengalaman, keahlian, sampai pencapaian yang pernah saya capai."
     "Setelah itu pak Paul beberapa kali melemparkan pertanyan kepadaku, tapi dengan latihan dan riset yang telah lakukan dengan sebelumnya."
     "Aku berhasil melalui pertanyaan yang dilemparkan padaku dengan mudah."
-    hrd "Selamat anda diterima sebagai [job] di perusahaan kami"
+    show eileen senang       
+    hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
+    hrd "selamat [main] anda diterima di perusahaan kami, sebagai [job] "
+    hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job] ."
+        
+    hrd "Apakah ada yang ingin ditanyakan?"
+        
+    hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
 
     if job == "Akuntan":
         jump accountant
@@ -136,6 +149,7 @@ label interview:
         jump business
 
     return
+
 
 
 
