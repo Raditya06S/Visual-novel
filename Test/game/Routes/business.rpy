@@ -1,32 +1,5 @@
 label business: 
-    #popup image mengisi lamaran
-scene bg 3
-        
-main "Oke lamaran udah dikirim, sekarang tinggal tunggu kabar dari HRD aja."
-
-
-scene bg_sky with dissolve
-"satu minggu kemudian"    
-
-scene bg 3
-main "Lho Email dari siapa ini? *Baca email* Oh, syukurlah aku masuk tahap interview "
-#popup email pernyataan akan di interview
-
-"Hari Interview pun tiba"
-        
-scene bg office
-
-show eileen senang       
-hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
-
-hrd "selamat [main] anda diterima di perusahaan kami, sebagai [job] "
-
-hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job] ."
-        
-hrd "Apakah ada yang ingin ditanyakan?"
-        
-hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
-
+  
 "Pada hari pertama kamu masuk kerja, kamu langsung ditugaskan sebagai konsultan di perusahaan Jaya makmur yang bergerak di bidang manufaktur sejak tahun 2003. PT jaya Makmur sendiri saat ini memiliki mesin otomatis dalam proses pembuatan furnitur rumah tangga. "
 
 main "selamat pagi pak/bu, perkenalkan saya [main] dari PT NBJ, hari ini saya ditugaskan sebagai consultan"
@@ -79,3 +52,4 @@ label goodBusiness:
     "Tak lama pihak procurement pun menyetujui pembelian mesin produksi yang baru. "
 
     "Dan dari keputusan yang kamu berikan ke staff produksi, hal tersebut merupakan hal yang tepat. Karena dari adanya unit produksi yang baru, jumlah produksi pun meningkat begitupun dari kualitas yang dihasilkan juga. Dan semenjak adanya unit baru menunjukan profit yang terus meningkat. "
+
