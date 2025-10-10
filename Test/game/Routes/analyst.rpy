@@ -1,22 +1,5 @@
 label analyst:
 
-#menampilkan gambar waktu isi lamaran
-
-main "Oke lamaran udah dikirim, sekarang tinggal tunggu kabar dari HRD aja."
-"*time skip 1 minggu*"
-
-main "Lho Email dari siapa ini? *Baca email* Oh, syukurlah aku masuk tahap interview "
-
-"*Tertulis di email akan ada interview* "
-
-"Hari interview pun tiba"
-"*Scene Interview*"
-
-hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami, "
-hrd "Selamat [main],anda diterima di perusahaan kami, sebagai [job]"
-hrd "Berikut jobdesk *Menampilkan selembaran jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job]"
-hrd " Apakah ada yang ingin ditanyakan?"
-hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya."
 
 "*Hari Pertama bekerja sebagai data analyst* "
 
@@ -72,4 +55,5 @@ label halfAnalyst:
     "Maka dari itu mengingat Tumbass belum ada menu varian Matcha, maka Tumbass pun meracik 2 Menu baru, Coffe-Matcha dan Matcha latte"
 
     "Dan dari keputusan membuat 2 menu baru tersebut, ternyata membuat dampak positif, yang dimana penjualan Tumbass meningkat drastis dikarenakan hampir keseluruhan pelanggan yang datang, memesan kedua menu terbaru tersebut dikarenkan memiliki rasa yang unik dan berbeda dengan matcha yang ada di coffee shop diluar. Sehingga dari keputusan yang kamu ambil adalah benar. "
+
 
