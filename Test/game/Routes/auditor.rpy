@@ -20,9 +20,9 @@ scene bg office
 show eileen senang       
 hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
 
-hrd "selamat [main] anda diterima di perusahaan kami, sebagai [route] "
+hrd "selamat [main] anda diterima di perusahaan kami, sebagai [job] "
 
-hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [route] ."
+hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job] ."
         
 hrd "Apakah ada yang ingin ditanyakan?"
         
@@ -101,4 +101,5 @@ label fingoodAuditor:
     kakak " oh... yaudah deh, makasih ya"
     "Pada akhirnya, temuan yang kamu dapatkan dicatat sebagai temuan. Dan dari temuan tersebut diberikan ke pimpinan manajemen perusahaan BBKN." 
     "Dan tindakan yang diambil oleh perusahaan BBKN yaitu membuat laporan baru sesuai dengan temuan yang ditemukan. Sehingga dari hal tersebut investor tetap percaya dan perusahaan BBKN tetap berjalan seperti umumnya"
+
     return
