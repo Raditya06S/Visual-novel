@@ -78,4 +78,3 @@ label goodBusiness:
 
     "Tak lama pihak procurement pun menyetujui pembelian mesin produksi yang baru. "
     "Dan dari keputusan yang kamu berikan ke staff produksi, hal tersebut merupakan hal yang tepat. Karena dari adanya unit produksi yang baru, jumlah produksi pun meningkat begitupun dari kualitas yang dihasilkan juga. Dan semenjak adanya unit baru menunjukan profit yang terus meningkat. "
-

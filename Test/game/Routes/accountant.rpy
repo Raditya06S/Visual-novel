@@ -164,4 +164,11 @@ main "Tolak ah, ngapain ambil double job kalau bisa berkarir lebih baik disini..
 
 "Dan 2 bulan dari naiknya kamu menjadi general accountant. Pimpinan perusahaan setuju untuk menaikan posisi kamu menjadi direktur utama dari PT. NBJ"
 
+
+
+
 return 
+
+
+
+
