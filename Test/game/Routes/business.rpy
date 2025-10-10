@@ -19,9 +19,9 @@ scene bg office
 show eileen senang       
 hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
 
-hrd "selamat [main] anda diterima di perusahaan kami, sebagai [route] "
+hrd "selamat [main] anda diterima di perusahaan kami, sebagai [job] "
 
-hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [route] ."
+hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job] ."
         
 hrd "Apakah ada yang ingin ditanyakan?"
         
@@ -77,4 +77,5 @@ label goodBusiness:
     staff " baiklah akan saya sampaikan dulu ke bagian procurement ya.... (pembelian)"
 
     "Tak lama pihak procurement pun menyetujui pembelian mesin produksi yang baru. "
+
     "Dan dari keputusan yang kamu berikan ke staff produksi, hal tersebut merupakan hal yang tepat. Karena dari adanya unit produksi yang baru, jumlah produksi pun meningkat begitupun dari kualitas yang dihasilkan juga. Dan semenjak adanya unit baru menunjukan profit yang terus meningkat. "
