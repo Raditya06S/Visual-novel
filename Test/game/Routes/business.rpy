@@ -17,15 +17,15 @@ main "Lho Email dari siapa ini? *Baca email* Oh, syukurlah aku masuk tahap inter
 scene bg office
 
 show eileen senang       
-HRD "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
+hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
 
-HRD "selamat [main] anda diterima di perusahaan kami, sebagai [job] "
+hrd "selamat [main] anda diterima di perusahaan kami, sebagai [route] "
 
-HRD "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job] ."
+hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [route] ."
         
-HRD "Apakah ada yang ingin ditanyakan?"
+hrd "Apakah ada yang ingin ditanyakan?"
         
-HRD "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
+hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
 
 "Pada hari pertama kamu masuk kerja, kamu langsung ditugaskan sebagai konsultan di perusahaan Jaya makmur yang bergerak di bidang manufaktur sejak tahun 2003. PT jaya Makmur sendiri saat ini memiliki mesin otomatis dalam proses pembuatan furnitur rumah tangga. "
 
@@ -47,11 +47,12 @@ staff "duh... kok bisa begini ya....."
 main "ada kemungkinan unitnya sudah terlalu lama digunakan pak/bu, dan tidak ada waktu untuk cooling down(istirahat)..."
 staff "duh.... buat sekarang gimana ya..... diperbaiki atau beli unit baru ya?"
 
-menu:
-    "Memilih untuk diperbaiki":
-        jump badBusiness
-    "Memilih untuk mengganti unit": 
-        jump goodBusiness
+while True:
+    menu:
+        "Memilih untuk diperbaiki":
+            jump badBusiness
+        "Memilih untuk mengganti unit": 
+            jump goodBusiness
 
 
 label badBusiness:
@@ -77,3 +78,4 @@ label goodBusiness:
 
     "Tak lama pihak procurement pun menyetujui pembelian mesin produksi yang baru. "
     "Dan dari keputusan yang kamu berikan ke staff produksi, hal tersebut merupakan hal yang tepat. Karena dari adanya unit produksi yang baru, jumlah produksi pun meningkat begitupun dari kualitas yang dihasilkan juga. Dan semenjak adanya unit baru menunjukan profit yang terus meningkat. "
+
