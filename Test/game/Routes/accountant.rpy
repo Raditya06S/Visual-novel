@@ -30,9 +30,9 @@ scene bg office
 show eileen senang       
 hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
 
-hrd "selamat [main] anda diterima di perusahaan kami, sebagai [route] "
+hrd "selamat [main] anda diterima di perusahaan kami, sebagai [job] "
 
-hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [route] ."
+hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job] ."
         
 hrd "Apakah ada yang ingin ditanyakan?"
         
@@ -168,6 +168,7 @@ main "Tolak ah, ngapain ambil double job kalau bisa berkarir lebih baik disini..
 
 
 return 
+
 
 
 
