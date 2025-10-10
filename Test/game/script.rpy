@@ -99,7 +99,7 @@ label common:
 
 
 label interview:
-     main "Oke aku udah putusin, aku yakin ini pasti posisi yang cocok buat aku!"
+    main "Oke aku udah putusin, aku yakin ini pasti posisi yang cocok buat aku!"
     main "Sebagai anak jurusan akuntansi gak mungkin aku bisa gagal disini"
     main "Sebaliknya aku yakin aku bisa naik jabatan cepat disisni"
     main "Waktunya mempersiapkan diri buat interview, aku harus pastiin buat gak gagal dalam percobaan pertama"
@@ -149,6 +149,7 @@ label interview:
         jump business
 
     return
+
 
 
 
