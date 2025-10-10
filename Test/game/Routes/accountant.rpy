@@ -1,42 +1,3 @@
-label accountant:
-
-   #popup image mengisi lamaran
-scene bg 3
-        
-main "Oke lamaran udah dikirim, sekarang tinggal tunggu kabar dari hrd aja."
-
-
-scene bg_sky with dissolve
-"satu minggu kemudian"    
-
-scene bg 3
-main "Lho Email dari siapa ini? *Baca email* Oh, syukurlah aku masuk tahap interview "
-#popup email pernyataan akan di interview
-
-image lamaran kerja = im.FactorScale("lamaran kerja.png", 0.5, 0.5)
-transform posisi_resume:
-    xalign 0.5
-    yalign 0.2
-window hide
-show lamaran kerja at posisi_resume 
-pause #2
-hide lamaran_kerja onlayer screens with dissolve
-window show 
-
-"Hari Interview pun tiba"
-        
-scene bg office
-
-show eileen senang       
-hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
-
-hrd "selamat [main] anda diterima di perusahaan kami, sebagai [job] "
-
-hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job] ."
-        
-hrd "Apakah ada yang ingin ditanyakan?"
-        
-hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
 
 scene bg_sky 
 scene bg office
@@ -168,6 +129,7 @@ main "Tolak ah, ngapain ambil double job kalau bisa berkarir lebih baik disini..
 
 
 return 
+
 
 
 
