@@ -117,12 +117,12 @@ label interview:
     "Aku sudah bekerja keras sampai saat ini jadi akan kupastikan aku diterima di perusahaan ini"
     main "Selamat siang"
     "Saat aku memasuki ruangan interview terdapat seorang pria dengan penampilan rapih yang menyambutku"
-    HRD "Selamat siang. Nama saya adalah Paul, saya yang akan bertanggung jawab sebagai interviewer hari ini."
+    hrd "Selamat siang. Nama saya adalah Paul, saya yang akan bertanggung jawab sebagai interviewer hari ini."
     main "Selamat siang, nama saya [main] saya adalah lulusan Akuntansi dari Universitas A."
     "Setelah itu aku melanjutkan perkenalan diri dari riwayat pendidikan, pengalaman, keahlian, sampai pencapaian yang pernah saya capai."
     "Setelah itu pak Paul beberapa kali melemparkan pertanyan kepadaku, tapi dengan latihan dan riset yang telah lakukan dengan sebelumnya."
     "Aku berhasil melalui pertanyaan yang dilemparkan padaku dengan mudah."
-    HRD "Selamat anda diterima sebagai [job] di perusahaan kami"
+    hrd "Selamat anda diterima sebagai [job] di perusahaan kami"
 
     if job == "Akuntan":
         jump accountant
@@ -136,6 +136,7 @@ label interview:
         jump business
 
     return
+
 
 
 
