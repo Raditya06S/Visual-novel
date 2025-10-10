@@ -1,22 +1,5 @@
 label tax:
 
-    #menampilkan gambar waktu isi lamaran
-main "Oke lamaran udah dikirim, sekarang tinggal tunggu kabar dari HRD aja."
-"*time skip 1 minggu*"
-
-main "Lho Email dari siapa ini? *Baca email* Oh, syukurlah aku masuk tahap interview "
-
-"*Tertulis di email akan ada interview* "
-
-"Hari interview pun tiba"
-"*Scene Interview*"
-
-hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami, "
-hrd "Selamat [main],anda diterima di perusahaan kami, sebagai [job]"
-hrd "Berikut jobdesk *Menampilkan selembaran jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job]"
-hrd " Apakah ada yang ingin ditanyakan?"
-hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya."
-
 "Pada hari pertama kamu masuk, kamu ditugaskan untuk mengurus perusahaan XBJ yang bergerak dibidang manufaktur. PT XBJ sendiri pun merupakan induk perusahaan NBJ yang saat ini sedang menaungi kamu."
 "Di PT XBJ pun membutuhkan seorang posisi Taxation untuk mengurus sistematika perpajakan dari penghasilan operasional perusahaan. "
 
@@ -74,4 +57,5 @@ label goodTaxation:
 
     "Dari keputusan yang kamu ambil, meskipun terlihat pendapatannya besar yang mengakibatkan pembayarannya besar tapi keputusan yang kamu ambil sudah betul dikarenakan perusahaan juga bisa mengkreditkan pajak yang dibayar."
     "Oleh karena itu, dari performa kamu yang  jeli dalam kasus perpajakan di PT XBJ, maka kamu dipromosikan sebagai Head Staff Taxation. "
+
 
