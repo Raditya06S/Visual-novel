@@ -1,25 +1,27 @@
-
+label accountant:
 scene bg_sky 
 scene bg office
+
 "Pada hari pertama kerja, [main] menerima pekerjaaan dari klien yang berasal dari perusahaan ABC yang bergerak di industri manufaktur. "
 "jobdesk utama anda adalah mencatat transaksi pembelian yang dilakukan perusahaan klien dari perusahaan rekanan klien vendor."
 
+show mc normal at left_pos
 main "Duh pencatatannya banyak banget ya."
 
 main "Pembelian bahan baku sebanyak 500 pack dengan nilai Rp100.000 per packnya." 
 "*scene input transaksi* "
 
 main "Lho, kok ada pembelian Uphone yang harganya Rp18.000.000 per 1pcsnya dengan jumlah pembelian 10 unit. Untuk apa ya kira kira? "
-
+hide mc normal
 #*tak selang lama ada telepon masuk* 
-
+show randP
 randP " Selamat pagi, saya *sensor nama* salah satu pekerja di bagian purchasing dari perusahaan ABC"
-
+show mc normal at left_pos
 main "Baik pak, ada yang bisa saya bantu?"
-
 randP "Bisa kah Anda mencatat pembelian barang X yang ada di transaksi perusahaan menjadi 8 unit saja? "
-
-randP "Apabila Anda mencatat menjadi 8 unit nantinya akan saya transfer uang sebesar 10Juta Rupiah."
+randP "Apabila Anda mencatat menjadi 8 unit nantinya akan saya transfer uang sebesar 10 Juta Rupiah."
+hide randP
+hide mc normal
 
 while True:
     menu:
@@ -29,19 +31,27 @@ while True:
             jump halfAccountant
 
 label badAccountant:
+show mc normal at left_pos
 main "baik pak, untuk pencatatannya sudah saya tulis sebesar pembelian 8 unit."
-
+show randP
 randP "oke untuk Transfer uang sebesar 10 Juta di esok hari, Terima kasih.  " 
          #*Telpon ditutup* 
 scene bg_sky
+hide mc normal
+hide randP
 "Hingga pada hari esok ternyata benar, ada Transfer yang masuk ke akun [main]"
 
 scene bg office 
+show mc normal at left_pos
 main "wih transferannya sudah masuk dong. ."
-main "Enaknya dipake buat beli apa ya???  "    
+main "Enaknya dipake buat beli apa ya???  "  
+show bos  
 bos "Lho kamu dapet Transferan? "
+show mc normal
 main "hehehe iya, soalnya kemarin baru aja selesaiin tugas khusus soalnya.  "
+show boss
 bos "Lho tugas khusus?"
+hide mc normal
 
 "[main], tidak mengetahui kalau posisinya dalam bahaya. Karena pada akhir periode produksi, perusahaan melakukan opname yang dilakukan oleh auditor. Setelah  auditor menganalisa pembelian yang telah dilakukan berdasarkan pencatatan akuntan, diketahui ternyata ada salah satu karyawan yang telah menggelapkan dana perusahaan untuk membeli Uphone sebanyak 10 unit, namun tercatat hanya 8 unit. " 
 "yang ternyata pembelian tersebut tercatat dalam transaksi pembelian perusahaan dan menggunakan budget perusahaan. " 
@@ -52,6 +62,7 @@ return
     
 
 label halfAccountant:
+show mc normal
 main "Mohon maaf pak, apabila disini tercatat pembeliannya sejumlah 10 unit saya akan tetap catat pembelian sesuai transaksi. Terima kasih "
 
 # *Menutup telepon* 
@@ -67,7 +78,7 @@ scene bg office
 "Setelah kejadian yang dialami oleh perusahaan ABC, [main] memiliki performa yang baik dan tidak ada permasalahan selama bekerja, pimpinan perusahaan memutuskan untuk menaikan jabatan [main] menjadi general accountant. "
 
 #Ppopup email dari perusahaann*
-
+show mc normal
 main "Hore! akhirnya naik ke general accountant..! *berseru kegirangan* "
 
 #*Selang beberapa waktu mendapat email lain* 
@@ -77,6 +88,7 @@ main "Eh., email apa ini?"
 main "Hmm.., tawaran yang menarik *sembari mencari informasi perusahaan tersebut*" 
 
 main"Ambil atau engga ya tawaran menarik ini?"
+hide mc normal
 
 while True:
     menu:
@@ -86,20 +98,23 @@ while True:
             jump fingoodAccountant
 
 label finbadAccountant:
+show mc normal
 main "Boleh lah aku coba, toh.., masih muda butuh pengalaman banyak *percaya diri meningkat*"
 
 scene bg_sky
 "Beberapa minggu kemudian"
 
 scene office
+show mc normal
 main "waduh banyak juga ya pekerjaan di PT. NBJ sampai kerjaanku di PT. ABC ga kepegang"
-
+hide mc normal
+show rekan
 rekan "*tidak sengaja mendengar*: Apa kamu bekerja di dua tempat berbeda di waktu yang bersamaan??? "
-
+show mc normal
 main "Eh iya hehe… "
-
+hide mc normal
 rekan "sebenarnya gk boleh lho jadi double agent. "
-
+show mc normal
 main "hehe kan masih muda, butuh pengalaman…, kan lumayan dapet gaji double juga.. *tertawa*"
 
 rekan "Hmm *hanya terdiam*"
@@ -108,6 +123,7 @@ scene bg_sky
 "beberapa hari kemudian"
 
 scene bg office
+show mc normal
 main "Eh..!!, kenapa ini aku kena layoff, padahal aku ga buat kesalahan sama sekali lohh…"
 
 "Dari teman PT ABC yang mendengar hal tersebut, kamu dilaporkan ke owner perusahaan dan ke pimpinan PT NBJ. Yang mengakibatkan kamu saat ini dipecat dari 2 perusahaan yang tadinya ditempati. "
@@ -126,12 +142,4 @@ main "Tolak ah, ngapain ambil double job kalau bisa berkarir lebih baik disini..
 "Dan 2 bulan dari naiknya kamu menjadi general accountant. Pimpinan perusahaan setuju untuk menaikan posisi kamu menjadi direktur utama dari PT. NBJ"
 
 
-
-
 return 
-
-
-
-
-
-
