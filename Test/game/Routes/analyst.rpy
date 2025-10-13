@@ -6,7 +6,7 @@ label analyst:
 "Pada saat ini kamu ditempatkan sebagai sales analyst di perusahaan yang bergerak di bidang FnB yang bernama /“Tumbas”/." 
 "Tumbas sendiri merupakan sebuah perusahaan baru yang memiliki business process berupa Coffee Shop dengan konsep speciality cafe dengan produk penjualan terbesarnya ada di sektor kopi dengan racikan espresso. "
 
-show mc normal
+show mc normal at left_pos
 main " hmm Tumbas ya, dulu pas masih kuliah pengen sih kesana tapi dulu gk ada waktu sama uang buat jajannya."
 main "oke deh berarti besok tinggal berangkat kesana buat diskusi terkait data penjuualan dia"
 hide mc normal
@@ -14,7 +14,7 @@ hide mc normal
 
 show staffKopi
 staffKopi "Halo [main], kamu pasti ditugaskan oleh perusahan NJB untuk membantu dalam analisa data penjualan kan? "
-show mc normal
+show mc normal at left_pos
 main "betul pak hehehe, kebetulan saya membantu di sektor sales forecasting"
 staffKopi "Oh kebetulan, untuk saat ini sales kita penjualannya agak sedikti drop. "
 hide mc normal
@@ -22,7 +22,7 @@ hide staffKopi
 
 "*Menampilkan data penjualan dan list produk yang terjual bulan ini dan bulan sebelumnya*"
 
-show mc normal
+show mc normal at left_pos
 main "lho hampir semua penjualan di semua produk mengalami penurunan ya......"
 show staffKopi
 staffKopi " iya, apa ini akibat dari tren yang ada di social media ya? Yang lagi ramainya kan sekarang trend matcha tuh....."
@@ -56,7 +56,7 @@ label badAnalyst:
 
 
 label goodAnalyst:
-    show mc normal
+    show mc normal at left_pos
     main "pak saya mau meminta data yang lebih banyak"
     main " soalnya kalau hanya produk dan matcha saja yang akan dijual saya rasa tidak cukup untuk menaikan penjualan"
     show staffKopi
