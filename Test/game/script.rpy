@@ -7,6 +7,20 @@ transform left_pos:
     yoffset 87  # move down by 50 pixels (positive = downward)
 
 
+image splash = "Binus.png"
+label splashscreen:
+    scene black
+    with Pause(1)
+
+    show splash with dissolve
+    with Pause(2)
+
+    hide text with dissolve
+    with Pause(1)
+
+    return
+
+
 label start:
 
     "Selamat datang di dunia visual novel"
@@ -155,6 +169,7 @@ label interview:
         jump business
 
     return
+
 
 
 
