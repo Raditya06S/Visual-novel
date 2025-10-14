@@ -62,7 +62,7 @@ return
     
 
 label halfAccountant:
-show mc normal
+show mc normal at left_pos
 main "Mohon maaf pak, apabila disini tercatat pembeliannya sejumlah 10 unit saya akan tetap catat pembelian sesuai transaksi. Terima kasih "
 
 # *Menutup telepon* 
@@ -78,7 +78,7 @@ scene bg office
 "Setelah kejadian yang dialami oleh perusahaan ABC, [main] memiliki performa yang baik dan tidak ada permasalahan selama bekerja, pimpinan perusahaan memutuskan untuk menaikan jabatan [main] menjadi general accountant. "
 
 #Ppopup email dari perusahaann*
-show mc normal
+show mc normal at left_pos
 main "Hore! akhirnya naik ke general accountant..! *berseru kegirangan* "
 
 #*Selang beberapa waktu mendapat email lain* 
@@ -98,23 +98,23 @@ while True:
             jump fingoodAccountant
 
 label finbadAccountant:
-show mc normal
+show mc normal at left_pos
 main "Boleh lah aku coba, toh.., masih muda butuh pengalaman banyak *percaya diri meningkat*"
 
 scene bg_sky
 "Beberapa minggu kemudian"
 
 scene office
-show mc normal
+show mc normal at left_pos
 main "waduh banyak juga ya pekerjaan di PT. NBJ sampai kerjaanku di PT. ABC ga kepegang"
 hide mc normal
 show rekan
 rekan "*tidak sengaja mendengar*: Apa kamu bekerja di dua tempat berbeda di waktu yang bersamaan??? "
-show mc normal
+show mc normal at left_pos
 main "Eh iya hehe… "
 hide mc normal
 rekan "sebenarnya gk boleh lho jadi double agent. "
-show mc normal
+show mc normal at left_pos
 main "hehe kan masih muda, butuh pengalaman…, kan lumayan dapet gaji double juga.. *tertawa*"
 
 rekan "Hmm *hanya terdiam*"
@@ -123,7 +123,7 @@ scene bg_sky
 "beberapa hari kemudian"
 
 scene bg office
-show mc normal
+show mc normal at left_pos
 main "Eh..!!, kenapa ini aku kena layoff, padahal aku ga buat kesalahan sama sekali lohh…"
 
 "Dari teman PT ABC yang mendengar hal tersebut, kamu dilaporkan ke owner perusahaan dan ke pimpinan PT NBJ. Yang mengakibatkan kamu saat ini dipecat dari 2 perusahaan yang tadinya ditempati. "
@@ -143,3 +143,4 @@ main "Tolak ah, ngapain ambil double job kalau bisa berkarir lebih baik disini..
 
 
 return 
+
