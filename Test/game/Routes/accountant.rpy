@@ -1,19 +1,19 @@
 label accountant:
-scene bg_sky 
+scene bg sky
 scene bg office
 
 "Pada hari pertama kerja, [main] menerima pekerjaaan dari klien yang berasal dari perusahaan ABC yang bergerak di industri manufaktur. "
 "jobdesk utama anda adalah mencatat transaksi pembelian yang dilakukan perusahaan klien dari perusahaan rekanan klien vendor."
 
-show mc normal at left_pos
+show mc shock at left_pos
 main "Duh pencatatannya banyak banget ya."
 
 main "Pembelian bahan baku sebanyak 500 pack dengan nilai Rp100.000 per packnya." 
 "*scene input transaksi* "
-
+show mc confused at left_pos 
 main "Lho, kok ada pembelian Uphone yang harganya Rp18.000.000 per 1pcsnya dengan jumlah pembelian 10 unit. Untuk apa ya kira kira? "
-hide mc normal
-#*tak selang lama ada telepon masuk* 
+hide mc 
+"*tak selang lama ada telepon masuk* "
 show randP
 randP " Selamat pagi, saya *sensor nama* salah satu pekerja di bagian purchasing dari perusahaan ABC"
 show mc normal at left_pos
@@ -35,25 +35,25 @@ show mc normal at left_pos
 main "baik pak, untuk pencatatannya sudah saya tulis sebesar pembelian 8 unit."
 show randP
 randP "oke untuk Transfer uang sebesar 10 Juta di esok hari, Terima kasih.  " 
-         #*Telpon ditutup* 
-scene bg_sky
+#*Telpon ditutup* 
+scene bg sky
 hide mc normal
-hide randP
+hide randPS
 "Hingga pada hari esok ternyata benar, ada Transfer yang masuk ke akun [main]"
 
 scene bg office 
-show mc normal at left_pos
+show mc happy at left_pos
 main "wih transferannya sudah masuk dong. ."
 main "Enaknya dipake buat beli apa ya???  "  
 show bos  
 bos "Lho kamu dapet Transferan? "
-show mc normal
 main "hehehe iya, soalnya kemarin baru aja selesaiin tugas khusus soalnya.  "
-show boss
 bos "Lho tugas khusus?"
 hide mc normal
+hide bos
 
-"[main], tidak mengetahui kalau posisinya dalam bahaya. Karena pada akhir periode produksi, perusahaan melakukan opname yang dilakukan oleh auditor. Setelah  auditor menganalisa pembelian yang telah dilakukan berdasarkan pencatatan akuntan, diketahui ternyata ada salah satu karyawan yang telah menggelapkan dana perusahaan untuk membeli Uphone sebanyak 10 unit, namun tercatat hanya 8 unit. " 
+"[main], tidak mengetahui kalau posisinya dalam bahaya. Karena pada akhir periode produksi, perusahaan melakukan opname yang dilakukan oleh auditor. Setelah  auditor menganalisa pembelian yang telah dilakukan berdasarkan pencatatan akuntan, "
+"diketahui ternyata ada salah satu karyawan yang telah menggelapkan dana perusahaan untuk membeli Uphone sebanyak 10 unit, namun tercatat hanya 8 unit. " 
 "yang ternyata pembelian tersebut tercatat dalam transaksi pembelian perusahaan dan menggunakan budget perusahaan. " 
 "Untuk selanjutnya karyawan yang menggelapkan dana perusahaan ABC dipecat secara tidak hormat, dan kamu sebagai akuntan yang terlibat dalam fraud dengan cara menerima suap untuk menutupi penggelapan dana juga ikut dipecat dan dipidanakan "
 return
@@ -71,24 +71,25 @@ main "Mohon maaf pak, apabila disini tercatat pembeliannya sejumlah 10 unit saya
 "Pada waktu akhir periode produksi, perusahaan melakukan opname yang dilakukan oleh auditor. Setelah  auditor menganalisa pembelian yang telah dilakukan berdasarkan pencatatan akuntan, diketahui ternyata ada salah satu karyawan yang telah menggelapkan dana perusahaan untuk membeli Uphone sebanyak 10 unit.  "
 "yang ternyata pembelian tersebut tercatat dalam transaksi pembelian perusahaan dan menggunakan budget perusahaan."
 
-scene bg_sky
+scene bg sky
 "satu bulan kemudian"
 
 scene bg office
 "Setelah kejadian yang dialami oleh perusahaan ABC, [main] memiliki performa yang baik dan tidak ada permasalahan selama bekerja, pimpinan perusahaan memutuskan untuk menaikan jabatan [main] menjadi general accountant. "
 
 #Ppopup email dari perusahaann*
-show mc normal at left_pos
+show mc happy at left_pos
 main "Hore! akhirnya naik ke general accountant..! *berseru kegirangan* "
 
 #*Selang beberapa waktu mendapat email lain* 
-
+show mc confused at left_pos
 main "Eh., email apa ini?"
 #*Membuka email tawaran sebagai kepala kantor PT. ABC*
+show mc normal at left_pos
 main "Hmm.., tawaran yang menarik *sembari mencari informasi perusahaan tersebut*" 
-
+show mc confused at left_pos
 main"Ambil atau engga ya tawaran menarik ini?"
-hide mc normal
+hide mc 
 
 while True:
     menu:
@@ -101,41 +102,44 @@ label finbadAccountant:
 show mc normal at left_pos
 main "Boleh lah aku coba, toh.., masih muda butuh pengalaman banyak *percaya diri meningkat*"
 
-scene bg_sky
+scene bg sky
 "Beberapa minggu kemudian"
 
-scene office
-show mc normal at left_pos
+scene bg office
+show mc shock at left_pos
 main "waduh banyak juga ya pekerjaan di PT. NBJ sampai kerjaanku di PT. ABC ga kepegang"
 hide mc normal
 show rekan
 rekan "*tidak sengaja mendengar*: Apa kamu bekerja di dua tempat berbeda di waktu yang bersamaan??? "
-show mc normal at left_pos
+show mc happy at left_pos
 main "Eh iya hehe… "
 hide mc normal
 rekan "sebenarnya gk boleh lho jadi double agent. "
-show mc normal at left_pos
+show mc happy at left_pos
 main "hehe kan masih muda, butuh pengalaman…, kan lumayan dapet gaji double juga.. *tertawa*"
 
 rekan "Hmm *hanya terdiam*"
 
-scene bg_sky
+scene bg sky
 "beberapa hari kemudian"
 
 scene bg office
-show mc normal at left_pos
+show mc shock at left_pos
 main "Eh..!!, kenapa ini aku kena layoff, padahal aku ga buat kesalahan sama sekali lohh…"
+hide mc 
 
 "Dari teman PT ABC yang mendengar hal tersebut, kamu dilaporkan ke owner perusahaan dan ke pimpinan PT NBJ. Yang mengakibatkan kamu saat ini dipecat dari 2 perusahaan yang tadinya ditempati. "
     
 "Sehingga saat ini kamu tidak memiliki pekerjaan lagi dikarenakan semua perusahaan menolak lamaran kamu karena tidak memiliki integritas dan loyalitas. "
 
+return
 
 label fingoodAccountant:
 
 scene bg office
+show mc confused at left_pos
 main "Tolak ah, ngapain ambil double job kalau bisa berkarir lebih baik disini..."
-
+hide mc
 "Dari keputusan yang kamu ambil, kinerja perusahaan yang saat ini kamu tempati (PT. NBJ) memiliki kualitas yang sangat baik dari posisi general accountant yang kamu tempati,"
 "hal itu terbukti dari jarangnya fraud yang terjadi, hingga kualitas laporan yang dibuat oleh team accounting menjadi sangat baik"
 
@@ -143,4 +147,5 @@ main "Tolak ah, ngapain ambil double job kalau bisa berkarir lebih baik disini..
 
 
 return 
+
 
