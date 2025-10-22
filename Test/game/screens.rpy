@@ -369,7 +369,8 @@ screen main_menu():
 
         vbox:
             style "main_menu_vbox"
-
+            xalign 0.05
+            yalign 0.05
             text "[config.name!t]":
                 style "main_menu_title"
 
@@ -1619,3 +1620,4 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
