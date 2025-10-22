@@ -1,17 +1,19 @@
 label analyst:
-
+scene bg sky
 
 "*Hari Pertama bekerja sebagai data analyst* "
 
-"Pada saat ini kamu ditempatkan sebagai sales analyst di perusahaan yang bergerak di bidang FnB yang bernama /“Tumbas”/." 
+"Pada saat ini kamu ditempatkan sebagai sales analyst di perusahaan yang bergerak di bidang FnB yang bernama “Tumbas”." 
 "Tumbas sendiri merupakan sebuah perusahaan baru yang memiliki business process berupa Coffee Shop dengan konsep speciality cafe dengan produk penjualan terbesarnya ada di sektor kopi dengan racikan espresso. "
+scene bg office
 
-show mc normal at left_pos
+show mc confused at left_pos
 main " hmm Tumbas ya, dulu pas masih kuliah pengen sih kesana tapi dulu gk ada waktu sama uang buat jajannya."
+show mc normal at left_pos
 main "oke deh berarti besok tinggal berangkat kesana buat diskusi terkait data penjuualan dia"
 hide mc normal
 "Hari pertama"
-
+scene bg coffeShop
 show staffKopi
 staffKopi "Halo [main], kamu pasti ditugaskan oleh perusahan NJB untuk membantu dalam analisa data penjualan kan? "
 show mc normal at left_pos
@@ -22,10 +24,11 @@ hide staffKopi
 
 "*Menampilkan data penjualan dan list produk yang terjual bulan ini dan bulan sebelumnya*"
 
-show mc normal at left_pos
+show mc shock at left_pos
 main "lho hampir semua penjualan di semua produk mengalami penurunan ya......"
 show staffKopi
 staffKopi " iya, apa ini akibat dari tren yang ada di social media ya? Yang lagi ramainya kan sekarang trend matcha tuh....."
+show mc confused at left_pos
 main "hmm kalau itu harus diliat dari berbagai macam sisi dan data sih, kita gk bisa ambil data dari sosmed aja."
 staffKopi "tapi kalo kamu liat, setiap coffee shop yang jual matcha itu laku keras, kalo kita ikutin pasti laku juga."
 hide staffKopi
@@ -56,8 +59,9 @@ label badAnalyst:
 
 
 label goodAnalyst:
-    show mc normal at left_pos
+    show mc confused at left_pos
     main "pak saya mau meminta data yang lebih banyak"
+    show mc normal at left_pos
     main " soalnya kalau hanya produk dan matcha saja yang akan dijual saya rasa tidak cukup untuk menaikan penjualan"
     show staffKopi
     staffKopi "Baik, berikut semua data yang berkaitan dengan penjualan dalam 2 bulan terakhir. "
@@ -69,9 +73,11 @@ label goodAnalyst:
     
     "Maka dari itu mengingat Tumbass belum ada menu varian Matcha, maka Tumbass pun meracik 2 Menu baru, Coffe-Matcha dan Matcha latte"
 
-    "Dan dari keputusan membuat 2 menu baru tersebut, ternyata membuat dampak positif, yang dimana penjualan Tumbass meningkat drastis dikarenakan hampir keseluruhan pelanggan yang datang, memesan kedua menu terbaru tersebut dikarenkan memiliki rasa yang unik dan berbeda dengan matcha yang ada di coffee shop diluar. Sehingga dari keputusan yang kamu ambil adalah benar. "
+    "Dan dari keputusan membuat 2 menu baru tersebut, ternyata membuat dampak positif, yang dimana penjualan Tumbass meningkat drastis dikarenakan hampir keseluruhan pelanggan yang datang, memesan kedua menu terbaru tersebut dikarenkan memiliki rasa yang unik dan berbeda dengan matcha yang ada di coffee shop diluar."
+    "Sehingga dari keputusan yang kamu ambil adalah benar. "
 
 
     return
+
 
 
