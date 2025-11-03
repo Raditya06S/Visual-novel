@@ -6,7 +6,6 @@ transform left_pos:
     xoffset -60
     yoffset 87  # move down by 50 pixels (positive = downward)
 
-
 image splash = "Binus.png"
 label splashscreen:
     scene black
@@ -19,6 +18,8 @@ label splashscreen:
     with Pause(1)
 
     return
+
+
 
 
 label start:
@@ -53,27 +54,29 @@ label gender_choice:
 
 label common:
     
-    scene bg 3
-    show mc normal at left_pos
+    scene bg room
+    show mc happy at left_pos
 
     main "Akhirnya!!!"
     main "Setelah 4 tahun kuliah, aku lulus"
-    hide mc normal
+    hide mc happy
     "Aku [main], aku adalah mahasiswa jurusan Akuntansi yang baru saja lulus dari kampus A. Aku lulus dengan nilai yang cukup baik "
     show mc normal at left_pos
     main "Karena sekarang udah gak perlu belajar sesering pas masih mahasiswa, sekarang aku punya banyak waktu luang"
+    hide mc normal
+    show mc confused at left_pos
     main "Waktu luang sebanyak ini enaknya ngapain ya?, apa aku harus olahraga?, atau..."
     main "..."
     main "Males juga keluar rumah, mending scroll Tungtung aja"
-    hide mc normal
+    hide mc confused
     "Setelah itu aku habiskan waktuku untuk mengscroll Tungtung untuk menghabiskan waktu luang"
     show mc normal at left_pos
     main "Hm? Apaan nih?"
     hide mc normal
     "Beberapa saat kemudian aku lihat sebuah artikel yang menarik perhatian ku"
-    show mc normal at left_pos
+    show mc shock at left_pos
     main "Banyak lulusan S1 nganggur?!"
-    hide mc normal
+    hide mc shock
     "Menurut artikel, tertulis bahwa \"Terjadi peningkatan jumlah pengangguran belakangan ini terutama para mahasiswa lulusan S1. Hal ini disebabkan karena sedikitnya jumlah lowongan kerja yang tidak mencukupi permintaan banyak pelamar pekerja\""
     show mc normal at left_pos
     main "Kalau aku santai terus kayak gini, aku bisa berakhir jadi pengangguran"
@@ -83,10 +86,15 @@ label common:
     "Menurut post itu mereka membuka 5 posisi yang berhubungan dengan akuntansi"
     show mc normal at left_pos
     main "Wah, pas banget ada posisi di PT.NJB yang sesuai sama prodi ku. Mending aku coba dulu daftar disini"
-    main "Tapi dari 5 posisi yang ada ini mending aku ngelamar di posisi apa ya?"
-    main "Sebaiknya aku hati-hati karena kelima posisi ini bisa ngasih peluang yang beda buat karir ku"
-    main "Sebaiknya aku ambil yang mana ya?"
     hide mc normal
+    show mc confused at left_pos
+    main "Tapi dari 5 posisi yang ada ini mending aku ngelamar di posisi apa ya?"
+    show mc normal at left_pos
+    main "Sebaiknya aku hati-hati karena kelima posisi ini bisa ngasih peluang yang beda buat karir ku"
+    hide mc normal
+    show mc confused at left_pos
+    main "Sebaiknya aku ambil yang mana ya?"
+    hide mc confused
 
     while True:
         menu:
@@ -119,7 +127,7 @@ label interview:
     main "Sebaliknya aku yakin aku bisa naik jabatan cepat disisni"
     main "Waktunya mempersiapkan diri buat interview, aku harus pastiin buat gak gagal dalam percobaan pertama"
     hide mc normal
-    scene bg_sky with dissolve
+    scene bg sky with dissolve
     "Setelah itu aku menghabiskan waktu luang ku untuk mempersiapkan diri jika tiba waktunya untuk aku interview"
     "Walaupun ini pengalaman yang asing untuk ku aku harus bisa melalui ini"
     "Akan kupastikan aku berhasil agar usaha ku selama ini tidak terbuang sia-sia"
@@ -129,33 +137,44 @@ label interview:
     show mc normal at left_pos
     main "Oke lamaran udah dikirim, sekarang tinggal tunggu kabar dari HRD aja."
     hide mc normal
-    scene bg_sky with dissolve
+    scene bg sky with dissolve
     "satu minggu kemudian"   
     "Lho Email dari siapa ini? *Baca email* Oh, syukurlah aku masuk tahap interview "
     "Saat itu aku merasa sangat senang. Tapi ini belum apa-apa, masih ada interview yang perlu aku hadapi sebelum memasuki dunia kerja"
     "Aku sudah bekerja keras sampai saat ini jadi akan kupastikan aku diterima di perusahaan ini"
     scene bg office with dissolve
 
-    show mc normal at left_pos
+    show mc happy at left_pos
     main "Selamat siang"
-    hide mc normal
+    hide mc happy
     "Saat aku memasuki ruangan interview terdapat seorang pria dengan penampilan rapih yang menyambutku"
-    show eileen senang   
+    show hrd 
     hrd "Selamat siang. Nama saya adalah Paul, saya yang akan bertanggung jawab sebagai interviewer hari ini."
-    show mc normal at left_pos
+    show mc happy at left_pos
     main "Selamat siang, nama saya [main] saya adalah lulusan Akuntansi dari Universitas A."
     "Setelah itu aku melanjutkan perkenalan diri dari riwayat pendidikan, pengalaman, keahlian, sampai pencapaian yang pernah saya capai."
     "Setelah itu pak Paul beberapa kali melemparkan pertanyan kepadaku, tapi dengan latihan dan riset yang telah lakukan dengan sebelumnya."
     "Aku berhasil melalui pertanyaan yang dilemparkan padaku dengan mudah."
-    show eileen senang       
+    show hrd      
     hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
     hrd "selamat [main] anda diterima di perusahaan kami, sebagai [job] "
     hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job] ."
-        
-    hrd "Apakah ada yang ingin ditanyakan?"
-        
-    hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
     hide mc
+    hide hrd
+    window hide
+    show job contract at center
+    with dissolve 
+    
+    pause 1.5  # show for 1.5 seconds
+
+    hide job contract
+    with dissolve
+    show hrd 
+    show mc happy at left_pos
+    window show
+    hrd "Apakah ada yang ingin ditanyakan?"  
+    hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
+    hide mc normal
 
     if job == "Akuntan":
         jump accountant
@@ -169,15 +188,5 @@ label interview:
         jump business
 
     return
-
-
-
-
-
-
-
-
-
-
 
 
