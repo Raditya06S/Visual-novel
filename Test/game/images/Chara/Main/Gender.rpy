@@ -1,15 +1,22 @@
-# Example: character base definitions
-image mc_normal = ConditionSwitch(
-    "gender == 'male'", Image ("images/Main/Male/mmc_normal.png"),
-    "gender == 'female'", im.Scale("images/Main/Female/fmc_normal.png", 450, 450)
+image mc normal = ConditionSwitch(
+    "gender == 'male'", im.Scale("images/Chara/Main/Male/mmc_normal.png", 450, 450),
+    "gender == 'female'", im.Scale("images/Chara/Main/Female/fmc_normal.png", 450, 450)
 )
 
-image mc sad = ConditionSwitch(
-    "gender == 'male'", "images/Chara/Main/Male/mmc_sad.png",
-    "gender == 'female'", "images/Chara/Main/Female/fmc_sad.png",
+image mc confused = ConditionSwitch(
+    "gender == 'male'", im.Scale("images/Chara/Main/Male/mmc_confused.png", 450, 450),
+    "gender == 'female'", im.Scale("images/Chara/Main/Female/fmc_confused.png", 450, 450)
 )
 
-image mc neutral = ConditionSwitch(
-    "gender == 'male'", "images/Chara/Main/Male/mmc_neutral.png",
-    "gender == 'female'", "images/Chara/Main/Female/fmc_neutral.png",
+
+image mc shock = ConditionSwitch(
+    "gender == 'male'", im.Scale("images/Chara/Main/Male/mmc_shock.png", 450, 450),
+    "gender == 'female'", im.Scale("images/Chara/Main/Female/fmc_shock.png", 450, 450)
 )
+
+image mc happy = ConditionSwitch(
+    "gender == 'male'", im.Scale("images/Chara/Main/Male/mmc_happy.png", 450, 450),
+    "gender == 'female'", im.Scale("images/Chara/Main/Female/fmc_happy.png", 450, 450)
+)
+
+
