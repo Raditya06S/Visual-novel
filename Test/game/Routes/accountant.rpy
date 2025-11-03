@@ -109,15 +109,16 @@ scene bg office
 show mc shock at left_pos
 main "waduh banyak juga ya pekerjaan di PT. NBJ sampai kerjaanku di PT. ABC ga kepegang"
 hide mc normal
-show rekan
+show rekan shock
 rekan "*tidak sengaja mendengar*: Apa kamu bekerja di dua tempat berbeda di waktu yang bersamaan??? "
 show mc happy at left_pos
 main "Eh iya hehe… "
 hide mc normal
+show rekan normal
 rekan "sebenarnya gk boleh lho jadi double agent. "
 show mc happy at left_pos
 main "hehe kan masih muda, butuh pengalaman…, kan lumayan dapet gaji double juga.. *tertawa*"
-
+show rekan nervous
 rekan "Hmm *hanya terdiam*"
 
 scene bg sky
@@ -147,5 +148,7 @@ hide mc
 
 
 return 
+
+
 
 
