@@ -67,9 +67,10 @@ main "Mohon maaf pak, apabila disini tercatat pembeliannya sejumlah 10 unit saya
 
 # *Menutup telepon* 
 
-"Saat sudah selesai mencatat keseluruhan transaksi, pencatatannya diberikan ke general accountant yang ada kantor maupun kantor klien "
-"Pada waktu akhir periode produksi, perusahaan melakukan opname yang dilakukan oleh auditor. Setelah  auditor menganalisa pembelian yang telah dilakukan berdasarkan pencatatan akuntan, diketahui ternyata ada salah satu karyawan yang telah menggelapkan dana perusahaan untuk membeli Uphone sebanyak 10 unit.  "
-"yang ternyata pembelian tersebut tercatat dalam transaksi pembelian perusahaan dan menggunakan budget perusahaan."
+"Saat sudah selesai mencatat keseluruhan transaksi, pencatatannya diberikan ke general accountant yang ada kantor maupun kantor klien. "
+"Pada waktu akhir periode produksi, perusahaan melakukan opname yang dilakukan oleh auditor." 
+"Setelah  auditor menganalisa pembelian yang telah dilakukan berdasarkan pencatatan akuntan, diketahui ternyata ada salah satu karyawan yang telah menggelapkan dana perusahaan untuk membeli Uphone sebanyak 10 unit.  "
+"Ternyata pembelian tersebut tercatat dalam transaksi pembelian perusahaan dan menggunakan budget perusahaan."
 
 scene bg sky
 "satu bulan kemudian"
@@ -148,6 +149,8 @@ hide mc
 
 
 return 
+
+
 
 
 
