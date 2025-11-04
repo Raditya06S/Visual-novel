@@ -53,7 +53,8 @@ label badAnalyst:
 
     "Dari resep dan racikan yang dibuat ternyata menghasilkan hasil yang kurang baik, namun dari keputusan dari staff coffee shop adalah tetap menjual dengan racikan dari internet "
 
-    "Hingga pada waktu perilisan menu baru, sejumlah pelanggan memesan dan mereview menu terbaru itu dan mengatakan jika menu tersebut tidak rekomen dikarenakan rasanya yang tidak enak. Sehingga dari kejadian tersebut Tumbass pun mengalami kebangkrutan yang dimana penjualannya makin merosot. "
+    "Hingga pada waktu perilisan menu baru, sejumlah pelanggan memesan dan mereview menu terbaru itu dan mengatakan jika menu tersebut tidak rekomen dikarenakan rasanya yang tidak enak. "
+    "Sehingga dari kejadian tersebut Tumbass pun mengalami kebangkrutan yang dimana penjualannya makin merosot. "
 
     return
 
@@ -73,8 +74,9 @@ label goodAnalyst:
     
     "Maka dari itu mengingat Tumbass belum ada menu varian Matcha, maka Tumbass pun meracik 2 Menu baru, Coffe-Matcha dan Matcha latte"
 
-    "Dan dari keputusan membuat 2 menu baru tersebut, ternyata membuat dampak positif, yang dimana penjualan Tumbass meningkat drastis dikarenakan hampir keseluruhan pelanggan yang datang, memesan kedua menu terbaru tersebut dikarenkan memiliki rasa yang unik dan berbeda dengan matcha yang ada di coffee shop diluar."
-    "Sehingga dari keputusan yang kamu ambil adalah benar. "
+    "Keputusan membuat 2 menu baru tersebut, ternyata membuat dampak positif, yang dimana penjualan Tumbass meningkat drastis." 
+    "Hal ini dikarenakan hampir keseluruhan pelanggan yang datang, memesan kedua menu terbaru tersebut dikarenkan memiliki rasa yang unik dan berbeda dengan matcha yang ada di coffee shop diluar."
+    "Dengan demikian, keputusan yang kamu ambil sudah tepat."
 
 
     return
