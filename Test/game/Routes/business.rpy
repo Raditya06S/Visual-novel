@@ -14,12 +14,12 @@ hide mc normal
 
 scene bg sky
 "*Besok Harinya*"
-"Tak lama di esok hari kamu bertugas sebagai konsultan di perusahaan jaya makmur. Kamu langsung bertugas di bagian produksi, namun kamu tidak bersentuhan langsung dengan bagian produksinya namun lebih ke arah memberikan masukan atas proses yang dilakukan di bagian produksi.  "
+"Keesokan harinya, kamu bertugas sebagai konsultan di perusahaan Jaya Makmur. Kamu langsung bertugas di bagian produksi, namun fokusmu adalah memberikan masukan terhadap proses yang dilakukan, bukan terlibat langsung dalam produksinya."
 
 scene bg pabrik
 
 show mc confused at left_pos
-main "dalam sebulan PT jaya makmur mampu memproduksi berapa meja pak/bu?"
+main "Dalam sebulan PT Jaya Makmur mampu memproduksi berapa meja, pak/bu?"
 show staff normal
 staff "Dalam sebulan target produksi kita itu sekitar 10.000 unit, tapi kita menaruh harga diangka 1.000.000 rupiah agar tidak terlalu mahal"
 show mc happy at left_pos
@@ -79,8 +79,9 @@ label goodBusiness:
     staff " baiklah akan saya sampaikan dulu ke bagian procurement ya.... (pembelian)"
     hide staff
 
-    "Tak lama pihak procurement pun menyetujui pembelian mesin produksi yang baru. "
-    "Dan dari keputusan yang kamu berikan ke staff produksi, hal tersebut merupakan hal yang tepat. Karena dari adanya unit produksi yang baru, jumlah produksi pun meningkat begitupun dari kualitas yang dihasilkan juga. Dan semenjak adanya unit baru menunjukan profit yang terus meningkat. "
+    "Tak lama kemudian, pihak procurement menyetujui pembelian mesin produksi yang baru. Keputusan yang kamu berikan kepada staf produksi pun terbukti tepat"
+    "Karena dari adanya unit produksi yang baru, jumlah produksi pun meningkat begitupun dari kualitas yang dihasilkan juga. Dan semenjak adanya unit baru menunjukan profit yang terus meningkat. "
 
     return
+
 
