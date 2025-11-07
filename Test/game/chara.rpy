@@ -18,10 +18,15 @@ define kakak = Character("Kakak", color="#f802d3f5")
 define staffKopi = Character("Staff Coffe Shop", color="#80130b73")
 
 define managerKeu = Character("Manager Keuangan", color="#09bb09f5")
+image manKeu confused = At(im.Scale("images/Chara/manKeu_confused.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
+image manKeu happy = At(im.Scale("images/Chara/manKeu_happy.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
+image manKeu normal = At(im.Scale("images/Chara/manKeu_normal.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
+image manKeu thinking = At(im.Scale("images/Chara/manKeu_thinking.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 
 define staff = Character("Parto", color="#aba0a0d2")
 image staff normal = At(im.Scale("images/Chara/staff_normal.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 image staff happy = At(im.Scale("images/Chara/staff_happy.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 image staff shock = At(im.Scale("images/Chara/staff_shock.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 image staff thinking = At(im.Scale("images/Chara/staff_thinking.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
+
 
