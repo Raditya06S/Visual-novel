@@ -10,14 +10,14 @@ main "oh ya mana sekarang bulan maret lagi......., pasti gk lama lagi ada kerjaa
 hide mc normal
 "*Tidak lama ada atasan kamu yang memiliki posisi sebagai manager keuangan di perusahaan datang menghampiri kamu* "
 
-show managerKeu
+show manKeu happy
 managerKeu "Halo [main], kamu pasti baru ditugaskan disini ya? "
 show mc happy at left_pos
 main " hehehe iya bu betul"
 managerKeu "Yang semangat yah, soalnya sebentar lagi sudah masuk ke masa pelaporan pajak, jadi harus yang rajin yahhh"
 main "Oke siap buu"
 hide mc 
-hide managerKeu
+hide manKeu
 
 "*Setelah ibu Manager tersebut pergi, kamu terus melakukan perkerjaan yang diberikan oleh atasan kamu, yaitu untuk menyiapkan pelaporan pendapatan perusahaan kedalam SPT* "
 
@@ -25,19 +25,21 @@ show mc happy at left_pos
 main "Wih kalo selesai dihitung ternyata pendapatan sebelum tax yang ada di perusahaan ini besar juga ya, sampai 50 Miliar lohhhh. "
 hide mc 
 "*Tak lama kemudian manager datang kembali* "
-show managerKeu
+show manKeu normal
 managerKeu "Kaget ya liat pendapatan perusahaan ditahun ini?"
 show mc happy at left_pos
 main " Iya bu hehehe "
 managerKeu "iya syukurlah di tahun ini penjualan produk kita selalu hampir menghabiskan stok setiap bulannya, jadinya pendapatan kita meningkat secara drastis."
 show mc confused at left_pos
 main " Lho bagus dong kalo kayak gitu bu...."
+show manKeu thinking
 managerKeu "Kata siapa bagus? Kalau pendapatan kita tinggi, otomatis pajak yang harus dibayarkan juga tinggi......"
+show manKeu confused
 managerKeu "nah berhubung sebentar lagi kan pelaporan SPT, kira-kira kamu bisa ngecatat pendapatan perusahaan kita lebih kecil dari sebenarnya gk nih? Kalo bisa saya ada bonus buat kamu berhubungan pendapatan kita sedang tinggi nih. "
 show mc shock at left_pos
 main "Duh.... gimana nih ya....."
 hide mc normal
-hide managerKeu
+hide manKeu
 
 
 while True:
@@ -52,10 +54,10 @@ while True:
 label badTaxation:
     show mc normal at left_pos
     main "siap bu, di pelaporan sudah saya catat dengan pendapatan yang sudah dikurangi."
-    show managerKeu
+    show manKeu happy
     managerKeu "sippp, Terima kasih ya"
     hide mc 
-    hide managerKeu
+    hide manKeu
 
     "Tanpa yang disadari, hal yang kamu ambil merupakan keputusan yang sangat berbahaya, karena dengan perubahan pencatatan yang kamu lakukan itu menyebabkan perusahaan langsung diaudit oleh pemerintah. "
     "Dari temuan pemerintah ternyata terdapat perbedaan pencatatan, dan langsung dikategorikan sebagai fraud"
@@ -68,9 +70,9 @@ label goodTaxation:
     show mc normal at left_pos
     main "mohon maaf bu, untuk pencatatannya harus disesuaikan dengan apa yang diterima"
     main "karena apabila pencatatan dikurangi, otomatis nanti DJP akan langsung menyadari dan kita bisa dipidanakan. "
-    show managerKeu
+    show manKeu confused
     managerKeu " ooooo seperti itu....."
-    hide managerKeu
+    hide manKeu
 
     "Saat ini Barulah diketahui jika manager yang menaungi PT XBJ merupakan karyawan baru yang dipindahkan dari tim produksi* "
 
