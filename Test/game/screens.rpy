@@ -602,9 +602,32 @@ screen load():
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
+        default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
+    
+        tag menu
 
-    use game_menu(title):
+        add im.Scale("images/ui/blue_bg.png", config.screen_width, config.screen_height)
+
+        imagebutton:
+            idle "images/ui/load_idle.png"
+            hover "images/ui/load_hover.png"
+            xpos 900
+            ypos 40
+            action ShowMenu("load")
+     
+        imagebutton:
+            idle "images/ui/save_idle.png"
+            hover "images/ui/save_hover.png"
+            xpos 1200
+            ypos 40
+            action ShowMenu("save")
+
+        imagebutton:
+            idle "images/ui/menu_idle.png"
+            hover "images/ui/menu_hover.png"
+            xpos 1500
+            ypos 40
+            action ShowMenu("preferences")
 
         fixed:
 
@@ -613,16 +636,7 @@ screen file_slots(title):
             order_reverse True
 
             ## The page name, which can be edited by clicking on a button.
-            button:
-                style "page_label"
-
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
-
-                input:
-                    style "page_label_text"
-                    value page_name_value
+          
 
             ## The grid of file slots.
             grid gui.file_slot_cols gui.file_slot_rows:
@@ -630,25 +644,29 @@ screen file_slots(title):
 
                 xalign 0.5
                 yalign 0.5
-
-                spacing gui.slot_spacing
+                xspacing 120
+                yspacing 80
+               
 
                 for i in range(gui.file_slot_cols * gui.file_slot_rows):
 
                     $ slot = i + 1
 
                     button:
+                        background Frame ("images/ui/postit.png")
                         action FileAction(slot)
 
                         has vbox
 
-                        add FileScreenshot(slot) xalign 0.5
+                        add FileScreenshot(slot) xalign 0.5 yoffset 20
 
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("")):
                             style "slot_time_text"
+                            yoffset 20
 
                         text FileSaveName(slot):
                             style "slot_name_text"
+                            yoffset 25
 
                         key "save_delete" action FileDelete(slot)
 
@@ -1620,4 +1638,5 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
 
