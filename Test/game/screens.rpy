@@ -602,12 +602,27 @@ screen load():
 
 screen file_slots(title):
 
-        default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
+         default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
     
         tag menu
 
+     
+
         add im.Scale("images/ui/blue_bg.png", config.screen_width, config.screen_height)
 
+        if CurrentScreenName() == "save":
+            text "Save Data":
+                xalign 0.1
+                yalign 0.08
+                size 60
+                color "#ffffff"
+        elif CurrentScreenName() == "load":
+            text "Load Data":
+                xalign 0.1
+                yalign 0.08
+                size 60
+                color "#ffffff"
+           
         imagebutton:
             idle "images/ui/load_idle.png"
             hover "images/ui/load_hover.png"
@@ -623,8 +638,8 @@ screen file_slots(title):
             action ShowMenu("save")
 
         imagebutton:
-            idle "images/ui/menu_idle.png"
-            hover "images/ui/menu_hover.png"
+            idle "images/ui/setting_idle.png"
+            hover "images/ui/setting_hover.png"
             xpos 1500
             ypos 40
             action ShowMenu("preferences")
@@ -654,6 +669,7 @@ screen file_slots(title):
 
                     button:
                         background Frame ("images/ui/postit.png")
+                        
                         action FileAction(slot)
 
                         has vbox
@@ -708,7 +724,6 @@ screen file_slots(title):
                             action DownloadSync()
                             xalign 0.5
 
-
 style page_label is gui_label
 style page_label_text is gui_label_text
 style page_button is gui_button
@@ -753,27 +768,72 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
 
+        add im.Scale("images/ui/blue_bg.png", config.screen_width, config.screen_height)
+       
+        text "Setting":
+                xalign 0.1
+                yalign 0.08
+                size 60
+                color "#ffffff"   
+           
+        imagebutton:
+            idle "images/ui/load_idle.png"
+            hover "images/ui/load_hover.png"
+            xpos 900
+            ypos 40
+            action ShowMenu("load")
+     
+        imagebutton:
+            idle "images/ui/save_idle.png"
+            hover "images/ui/save_hover.png"
+            xpos 1200
+            ypos 40
+            action ShowMenu("save")
+
+        imagebutton:
+            idle "images/ui/setting_idle.png"
+            hover "images/ui/setting_hover.png"
+            xpos 1500
+            ypos 40
+            action ShowMenu("preferences")
+
+        
         vbox:
-
+            spacing 10
             hbox:
                 box_wrap True
-
+                xpos 300
+                ypos 175
+                spacing 250
                 if renpy.variant("pc") or renpy.variant("web"):
 
                     vbox:
+                        ypos 70
+                        spacing 10
                         style_prefix "radio"
                         label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        imagebutton:
+                            idle "images/UI/wdwidle.png"
+                            hover "images/UI/wdwhvr.png"
+                            action Preference("display", "window")
+                        imagebutton:
+                            idle "images/UI/fullscrnidle.png"
+                            hover "images/UI/fullscrnhvr.png"
+                            action Preference("display", "fullscreen")
 
                 vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                    ypos 70
+                    label _("Text")
+                    style_prefix "slider"
+                    textbutton _("Text Speed")
+                    hbox:
+                        xpos 30
+                        bar value Preference("text speed")
+                    textbutton _("Auto-Forward Time")
+                    hbox: 
+                        xpos 30
+                        bar value Preference("auto-forward time")
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can
                 ## be added here, to add additional creator-defined preferences.
@@ -783,30 +843,24 @@ screen preferences():
             hbox:
                 style_prefix "slider"
                 box_wrap True
-
+                xpos 300
+                ypos 175
+                spacing 250
                 vbox:
-
-                    label _("Text Speed")
-
-                    bar value Preference("text speed")
-
-                    label _("Auto-Forward Time")
-
-                    bar value Preference("auto-forward time")
-
-                vbox:
-
+                    label _("Sound")
                     if config.has_music:
-                        label _("Music Volume")
+                        textbutton _("Music Volume")
 
                         hbox:
+                            xpos 25
                             bar value Preference("music volume")
 
                     if config.has_sound:
 
-                        label _("Sound Volume")
+                        textbutton _("Sound Volume")
 
                         hbox:
+                            xpos 25
                             bar value Preference("sound volume")
 
                             if config.sample_sound:
@@ -814,9 +868,10 @@ screen preferences():
 
 
                     if config.has_voice:
-                        label _("Voice Volume")
+                        textbutton _("Voice Volume")
 
                         hbox:
+                            xpos 25
                             bar value Preference("voice volume")
 
                             if config.sample_voice:
@@ -828,6 +883,28 @@ screen preferences():
                         textbutton _("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
+
+                vbox:
+                    xpos -350
+                    spacing 10
+                    style_prefix "check"
+                    label _("Skip")
+                    imagebutton:
+                                idle "images/UI/unstxtidle.png"
+                                hover "images/UI/unstxthvr.png"
+                                action Preference("skip", "toggle")
+                    imagebutton:
+                                xpos  300 
+                                ypos -90
+                                idle "images/UI/afchoidle.png"
+                                hover "images/UI/afchohvr.png"
+                                action Preference("after choices", "toggle")
+                    imagebutton:
+                                ypos -70
+                                idle "images/UI/transidle.png"
+                                hover "images/UI/transhvr.png"                      
+                                action InvertSelected(Preference("transitions", "toggle"))
+
 
 
 style pref_label is gui_label
@@ -1638,5 +1715,6 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
 
 
