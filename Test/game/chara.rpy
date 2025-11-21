@@ -1,7 +1,12 @@
 #Common
-default main = "Protagonist"
+default main = "Protagonist" 
 
 define hrd = Character("Paul", color="#1cb87c")
+image hrd confused = At(im.Scale("images/Chara/hrd_confused.png", 2300, 2300), Transform(xalign=0.5, yalign=0))
+image hrd happy = At(im.Scale("images/Chara/hrd_happy.png", 2300, 2300), Transform(xalign=0.5, yalign=0))
+image hrd normal = At(im.Scale("images/Chara/hrd_normal.png", 2300, 2300), Transform(xalign=0.5, yalign=0))
+image hrd thinking = At(im.Scale("images/Chara/hrd_thinking.png", 2300, 2300), Transform(xalign=0.5, yalign=0))
+
 
 define randP = Character("Orang misterius", color="#e81010")
 
@@ -14,6 +19,8 @@ image rekan nervous = At(im.Scale("images/Chara/rekan_nervous.png", 2700, 2200),
 image rekan shock = At(im.Scale("images/Chara/rekan_shock.png", 2700, 2200), Transform(xalign=1, yalign=-1))
 
 define kakak = Character("Kakak", color="#f802d3f5")
+image kakak happy = At(im.Scale("images/Chara/kakak_happy.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
+image kakak normal = At(im.Scale("images/Chara/kakak_normal.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 
 define staffKopi = Character("Staff Coffe Shop", color="#80130b73")
 
@@ -28,5 +35,6 @@ image staff normal = At(im.Scale("images/Chara/staff_normal.png", 2000, 2000), T
 image staff happy = At(im.Scale("images/Chara/staff_happy.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 image staff shock = At(im.Scale("images/Chara/staff_shock.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 image staff thinking = At(im.Scale("images/Chara/staff_thinking.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
+
 
 
