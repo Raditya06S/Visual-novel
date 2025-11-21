@@ -148,16 +148,18 @@ label interview:
     main "Selamat siang"
     hide mc happy
     "Saat aku memasuki ruangan interview terdapat seorang pria dengan penampilan rapih yang menyambutku"
-    show hrd 
+    show hrd normal
     hrd "Selamat siang. Nama saya adalah Paul, saya yang akan bertanggung jawab sebagai interviewer hari ini."
     show mc happy at left_pos
     main "Selamat siang, nama saya [main] saya adalah lulusan Akuntansi dari Universitas A."
     "Setelah itu aku melanjutkan perkenalan diri dari riwayat pendidikan, pengalaman, keahlian, sampai pencapaian yang pernah saya capai."
     "Setelah itu pak Paul beberapa kali melemparkan pertanyan kepadaku, tapi dengan latihan dan riset yang telah lakukan dengan sebelumnya."
     "Aku berhasil melalui pertanyaan yang dilemparkan padaku dengan mudah."
-    show hrd      
+    show hrd thinking
     hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
+    show hrd happy
     hrd "selamat [main] anda diterima di perusahaan kami, sebagai [job] "
+    show hrd confused
     hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job] ."
     hide mc
     hide hrd
@@ -188,5 +190,6 @@ label interview:
         jump business
 
     return
+
 
 
