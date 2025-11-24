@@ -13,7 +13,7 @@ show mc normal at left_pos
 main "oke deh berarti besok tinggal berangkat kesana buat diskusi terkait data penjuualan dia"
 hide mc normal
 "Hari pertama"
-scene bg coffeShop
+scene bg cshop
 show staffKopi
 staffKopi "Halo [main], kamu pasti ditugaskan oleh perusahan NJB untuk membantu dalam analisa data penjualan kan? "
 show mc normal at left_pos
@@ -80,6 +80,7 @@ label goodAnalyst:
 
 
     return
+
 
 
 
