@@ -144,7 +144,7 @@ label interview:
     "Aku sudah bekerja keras sampai saat ini jadi akan kupastikan aku diterima di perusahaan ini"
     scene bg office with dissolve
 
-    show mc happy at left_pos
+        show mc happy at left_pos
     main "Selamat siang"
     hide mc happy
     "Saat aku memasuki ruangan interview terdapat seorang pria dengan penampilan rapih yang menyambutku"
@@ -171,12 +171,13 @@ label interview:
 
     hide job contract
     with dissolve
-    show hrd 
+    show hrd confused
     show mc happy at left_pos
     window show
     hrd "Apakah ada yang ingin ditanyakan?"  
+    show hrd normal
     hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
-    hide mc normal
+    hide mc normall
 
     if job == "Akuntan":
         jump accountant
@@ -190,6 +191,7 @@ label interview:
         jump business
 
     return
+
 
 
 
