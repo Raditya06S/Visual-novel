@@ -16,7 +16,7 @@ scene bg sky
 "*Besok Harinya*"
 "Keesokan harinya, kamu bertugas sebagai konsultan di perusahaan Jaya Makmur. Kamu langsung bertugas di bagian produksi, namun fokusmu adalah memberikan masukan terhadap proses yang dilakukan, bukan terlibat langsung dalam produksinya."
 
-scene bg pabrik
+scene bg admin
 
 show mc confused at left_pos
 main "Dalam sebulan PT Jaya Makmur mampu memproduksi berapa meja, pak/bu?"
@@ -37,8 +37,7 @@ show staff thinking
 staff "duh.... buat sekarang gimana ya..... diperbaiki atau beli unit baru ya?"
 hide mc normal
 hide staff
-
-
+window hide
 while True:
     menu:
         "Memilih untuk diperbaiki":
@@ -69,12 +68,25 @@ label goodBusiness:
     hide mc normal
     hide staff
 
-    "*Menampilkan sheet kalkulasi* "
+    window hide
+    show keterangan at center_pos
+    with dissolve 
+    pause 1.5  # show for 1.5 seconds
     "Harusny dengan penjualan unit saat ini dan pencicilan pembayaran pun mampu menutup produksi saat ini"
+    hide keterangan
+    with dissolve
+    
     show mc happy at left_pos
     main "dan berikut pak seperti ini untuk proyeksi kedepannya dengan unit baru"
     hide mc normal
-    "*menampilkan sheet proyeksi* "
+
+    window hide
+    show proyeksi at center_pos
+    with dissolve 
+    pause 1.5  # show for 1.5 seconds
+    hide proyeksi
+    with dissolve
+
     show staff normal
     staff " baiklah akan saya sampaikan dulu ke bagian procurement ya.... (pembelian)"
     hide staff
@@ -83,5 +95,6 @@ label goodBusiness:
     "Karena dari adanya unit produksi yang baru, jumlah produksi pun meningkat begitupun dari kualitas yang dihasilkan juga. Dan semenjak adanya unit baru menunjukan profit yang terus meningkat. "
 
     return
+
 
 
