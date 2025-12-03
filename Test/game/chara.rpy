@@ -23,6 +23,10 @@ image kakak happy = At(im.Scale("images/Chara/kakak_happy.png", 2000, 2000), Tra
 image kakak normal = At(im.Scale("images/Chara/kakak_normal.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 
 define staffKopi = Character("Staff Coffe Shop", color="#80130b73")
+image sk concerned = At(im.Scale("images/Chara/sk_concerned.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
+image sk happy = At(im.Scale("images/Chara/sk_happy.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
+image sk normal = At(im.Scale("images/Chara/sk_normal.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
+image sk thinking = At(im.Scale("images/Chara/sk_thinking.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 
 define managerKeu = Character("Manager Keuangan", color="#09bb09f5")
 image manKeu confused = At(im.Scale("images/Chara/manKeu_confused.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
@@ -35,6 +39,7 @@ image staff normal = At(im.Scale("images/Chara/staff_normal.png", 2000, 2000), T
 image staff happy = At(im.Scale("images/Chara/staff_happy.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 image staff shock = At(im.Scale("images/Chara/staff_shock.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 image staff thinking = At(im.Scale("images/Chara/staff_thinking.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
+
 
 
 
