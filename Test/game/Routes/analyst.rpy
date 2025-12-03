@@ -14,24 +14,26 @@ main "oke deh berarti besok tinggal berangkat kesana buat diskusi terkait data p
 hide mc normal
 "Hari pertama"
 scene bg cshop
-show staffKopi
+show sk happy
 staffKopi "Halo [main], kamu pasti ditugaskan oleh perusahan NJB untuk membantu dalam analisa data penjualan kan? "
-show mc normal at left_pos
+show mc happy at left_pos
 main "betul pak hehehe, kebetulan saya membantu di sektor sales forecasting"
+show sk concerned
 staffKopi "Oh kebetulan, untuk saat ini sales kita penjualannya agak sedikti drop. "
 hide mc normal
-hide staffKopi
+hide sk
 
 "*Menampilkan data penjualan dan list produk yang terjual bulan ini dan bulan sebelumnya*"
 
 show mc shock at left_pos
 main "lho hampir semua penjualan di semua produk mengalami penurunan ya......"
-show staffKopi
+show sk thinking
 staffKopi " iya, apa ini akibat dari tren yang ada di social media ya? Yang lagi ramainya kan sekarang trend matcha tuh....."
 show mc confused at left_pos
 main "hmm kalau itu harus diliat dari berbagai macam sisi dan data sih, kita gk bisa ambil data dari sosmed aja."
+show sk normal
 staffKopi "tapi kalo kamu liat, setiap coffee shop yang jual matcha itu laku keras, kalo kita ikutin pasti laku juga."
-hide staffKopi
+hide sk
 hide mc normal
 
 while True:
@@ -44,10 +46,10 @@ while True:
 label badAnalyst:
     show mc normal at left_pos
     main " baik pak sepertinya kalau mengikuti trend di internet juga tidaklah buruk. "
-    show staffKopi
-    staffKopi " oke baik, mulai besok ktia coba racik sesuai dengan resep yang ada di internet ya..."
+    show sk happy
+    staffKopi " oke baik, mulai besok kita coba racik sesuai dengan resep yang ada di internet ya..."
     hide mc normal
-    hide staffKopi
+    hide sk
 
     "Dengan adanya mengikuti trend yang ada di internet tidak semuanya berjalan dengan mulus. "
 
@@ -64,10 +66,10 @@ label goodAnalyst:
     main "pak saya mau meminta data yang lebih banyak"
     show mc normal at left_pos
     main " soalnya kalau hanya produk dan matcha saja yang akan dijual saya rasa tidak cukup untuk menaikan penjualan"
-    show staffKopi
+    show sk normal
     staffKopi "Baik, berikut semua data yang berkaitan dengan penjualan dalam 2 bulan terakhir. "
     hide mc normal
-    hide staffKopi
+    hide sk
 
 
     "Berdasarkan data yang diberikan oleh Staff Tumbass, kamu menemukan sebuah penemuan menarik yang dimana ternyata penjualan terbanyak sebelum trend matcha jatuh kepada varian latte "
@@ -80,6 +82,7 @@ label goodAnalyst:
 
 
     return
+
 
 
 
