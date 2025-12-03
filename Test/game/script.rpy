@@ -6,6 +6,10 @@ transform left_pos:
     xoffset -60
     yoffset 87  # move down by 50 pixels (positive = downward)
 
+transform center_pos:
+    xalign 0.5
+    yalign 0.5
+
 image splash = "Binus.png"
 label splashscreen:
     scene black
@@ -191,6 +195,7 @@ label interview:
         jump business
 
     return
+
 
 
 
