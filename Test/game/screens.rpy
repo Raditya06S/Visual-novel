@@ -623,26 +623,58 @@ screen file_slots(title):
                 size 60
                 color "#ffffff"
            
-        imagebutton:
-            idle "images/ui/load_idle.png"
-            hover "images/ui/load_hover.png"
-            xpos 900
-            ypos 40
-            action ShowMenu("load")
+        if main_menu:   
+            imagebutton:
+                idle "images/ui/load_idle.png"
+                hover "images/ui/load_hover.png"
+                xpos 1300
+                ypos 40
+                action ShowMenu("load")
+        else:
+            imagebutton:
+                idle "images/ui/load_idle.png"
+                hover "images/ui/load_hover.png"
+                xpos 1000
+                ypos 40
+                action ShowMenu("load")
      
-        imagebutton:
-            idle "images/ui/save_idle.png"
-            hover "images/ui/save_hover.png"
-            xpos 1200
-            ypos 40
-            action ShowMenu("save")
-
+        if not main_menu:
+            imagebutton:
+                idle "images/ui/save_idle.png"
+                hover "images/ui/save_hover.png"
+                xpos 1300
+                ypos 40
+                action ShowMenu("save")
+ 
         imagebutton:
             idle "images/ui/setting_idle.png"
             hover "images/ui/setting_hover.png"
-            xpos 1500
+            xpos 1600
             ypos 40
             action ShowMenu("preferences")
+
+        if main_menu:
+            imagebutton:
+                idle "images/ui/titleidle.png"
+                hover "images/ui/titlehvr.png"
+                xpos 1300
+                ypos 960
+                action ShowMenu("main_menu")
+        else:
+            imagebutton:
+                idle "images/ui/titleidle.png"
+                hover "images/ui/titlehvr.png"
+                xpos 1300
+                ypos 960
+                action MainMenu()
+
+        imagebutton:
+            idle "images/ui/exitidle.png"
+            hover "images/ui/exithvr.png"
+            xpos 1600
+            ypos 960
+            action Quit(confirm=True)
+
 
         fixed:
 
@@ -777,26 +809,58 @@ screen preferences():
                 size 60
                 color "#ffffff"   
            
-        imagebutton:
-            idle "images/ui/load_idle.png"
-            hover "images/ui/load_hover.png"
-            xpos 900
-            ypos 40
-            action ShowMenu("load")
+        if main_menu:   
+            imagebutton:
+                idle "images/ui/load_idle.png"
+                hover "images/ui/load_hover.png"
+                xpos 1300
+                ypos 40
+                action ShowMenu("load")
+        else:
+            imagebutton:
+                idle "images/ui/load_idle.png"
+                hover "images/ui/load_hover.png"
+                xpos 1000
+                ypos 40
+                action ShowMenu("load")
      
-        imagebutton:
-            idle "images/ui/save_idle.png"
-            hover "images/ui/save_hover.png"
-            xpos 1200
-            ypos 40
-            action ShowMenu("save")
-
+        if not main_menu:
+            imagebutton:
+                idle "images/ui/save_idle.png"
+                hover "images/ui/save_hover.png"
+                xpos 1300
+                ypos 40
+                action ShowMenu("save")
+ 
         imagebutton:
             idle "images/ui/setting_idle.png"
             hover "images/ui/setting_hover.png"
-            xpos 1500
+            xpos 1600
             ypos 40
             action ShowMenu("preferences")
+
+        if main_menu:
+            imagebutton:
+                idle "images/ui/titleidle.png"
+                hover "images/ui/titlehvr.png"
+                xpos 1300
+                ypos 960
+                action ShowMenu("main_menu")
+        else:
+            imagebutton:
+                idle "images/ui/titleidle.png"
+                hover "images/ui/titlehvr.png"
+                xpos 1300
+                ypos 960
+                action MainMenu()
+
+        imagebutton:
+            idle "images/ui/exitidle.png"
+            hover "images/ui/exithvr.png"
+            xpos 1600
+            ypos 960
+            action Quit(confirm=True)
+
 
         
         vbox:
@@ -1715,6 +1779,7 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
 
 
 
