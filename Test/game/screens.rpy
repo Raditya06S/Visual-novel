@@ -9,6 +9,12 @@ init offset = -1
 ## Styles
 ################################################################################
 
+style menu:
+    color "#3C9DFF"
+    hover_color "#245E99"
+    size 30
+    font "fonts1/K2D/K2DSemiBold.ttf"
+
 style default:
     properties gui.text_properties()
     language gui.language
@@ -59,6 +65,7 @@ style vscrollbar:
     xsize gui.scrollbar_size
     base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
     thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    unscrollable "hide"
 
 style slider:
     ysize gui.slider_size
@@ -240,20 +247,51 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
+    key 'mousedown_4':
+        action ShowMenu("history")
+
     if quick_menu:
 
         hbox:
             style_prefix "quick"
             style "quick_menu"
 
-            textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Q.Save") action QuickSave()
-            textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton "BACK":
+                text_style "menu"
+                action Rollback()
+
+            textbutton "History":
+                text_style "menu" 
+                action ShowMenu('history')
+
+            textbutton "SKIP":
+                text_style "menu" 
+                action Skip() alternate Skip(fast=True, confirm=True)
+
+            textbutton "AUTO":
+                text_style "menu" 
+                action Preference("auto-forward", "toggle")
+
+            textbutton "SAVE": 
+                text_style "menu"
+                action ShowMenu('save')
+
+            textbutton "LOAD": 
+                text_style "menu"
+                action ShowMenu('load')
+
+            textbutton "Q.SAVE":
+                text_style "menu" 
+                action QuickSave()
+
+            textbutton "Q.LOAD":
+                text_style "menu" 
+                action QuickLoad()
+
+            textbutton "SETTINGS":
+                text_style "menu"
+                action ShowMenu('preferences')
+
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -602,79 +640,32 @@ screen load():
 
 screen file_slots(title):
 
-         default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
+        default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
     
         tag menu
 
-     
-
         add im.Scale("images/ui/blue_bg.png", config.screen_width, config.screen_height)
 
-        if CurrentScreenName() == "save":
-            text "Save Data":
-                xalign 0.1
-                yalign 0.08
-                size 60
-                color "#ffffff"
-        elif CurrentScreenName() == "load":
-            text "Load Data":
-                xalign 0.1
-                yalign 0.08
-                size 60
-                color "#ffffff"
-           
-        if main_menu:   
-            imagebutton:
-                idle "images/ui/load_idle.png"
-                hover "images/ui/load_hover.png"
-                xpos 1300
-                ypos 40
-                action ShowMenu("load")
-        else:
-            imagebutton:
-                idle "images/ui/load_idle.png"
-                hover "images/ui/load_hover.png"
-                xpos 1000
-                ypos 40
-                action ShowMenu("load")
-     
-        if not main_menu:
-            imagebutton:
-                idle "images/ui/save_idle.png"
-                hover "images/ui/save_hover.png"
-                xpos 1300
-                ypos 40
-                action ShowMenu("save")
- 
         imagebutton:
-            idle "images/ui/setting_idle.png"
-            hover "images/ui/setting_hover.png"
-            xpos 1600
+            idle "images/ui/load_idle.png"
+            hover "images/ui/load_hover.png"
+            xpos 900
+            ypos 40
+            action ShowMenu("load")
+     
+        imagebutton:
+            idle "images/ui/save_idle.png"
+            hover "images/ui/save_hover.png"
+            xpos 1200
+            ypos 40
+            action ShowMenu("save")
+
+        imagebutton:
+            idle "images/ui/menu_idle.png"
+            hover "images/ui/menu_hover.png"
+            xpos 1500
             ypos 40
             action ShowMenu("preferences")
-
-        if main_menu:
-            imagebutton:
-                idle "images/ui/titleidle.png"
-                hover "images/ui/titlehvr.png"
-                xpos 1300
-                ypos 960
-                action ShowMenu("main_menu")
-        else:
-            imagebutton:
-                idle "images/ui/titleidle.png"
-                hover "images/ui/titlehvr.png"
-                xpos 1300
-                ypos 960
-                action MainMenu()
-
-        imagebutton:
-            idle "images/ui/exitidle.png"
-            hover "images/ui/exithvr.png"
-            xpos 1600
-            ypos 960
-            action Quit(confirm=True)
-
 
         fixed:
 
@@ -701,7 +692,6 @@ screen file_slots(title):
 
                     button:
                         background Frame ("images/ui/postit.png")
-                        
                         action FileAction(slot)
 
                         has vbox
@@ -756,6 +746,7 @@ screen file_slots(title):
                             action DownloadSync()
                             xalign 0.5
 
+
 style page_label is gui_label
 style page_label_text is gui_label_text
 style page_button is gui_button
@@ -800,104 +791,27 @@ screen preferences():
 
     tag menu
 
+    use game_menu(_("Preferences"), scroll="viewport"):
 
-        add im.Scale("images/ui/blue_bg.png", config.screen_width, config.screen_height)
-       
-        text "Setting":
-                xalign 0.1
-                yalign 0.08
-                size 60
-                color "#ffffff"   
-           
-        if main_menu:   
-            imagebutton:
-                idle "images/ui/load_idle.png"
-                hover "images/ui/load_hover.png"
-                xpos 1300
-                ypos 40
-                action ShowMenu("load")
-        else:
-            imagebutton:
-                idle "images/ui/load_idle.png"
-                hover "images/ui/load_hover.png"
-                xpos 1000
-                ypos 40
-                action ShowMenu("load")
-     
-        if not main_menu:
-            imagebutton:
-                idle "images/ui/save_idle.png"
-                hover "images/ui/save_hover.png"
-                xpos 1300
-                ypos 40
-                action ShowMenu("save")
- 
-        imagebutton:
-            idle "images/ui/setting_idle.png"
-            hover "images/ui/setting_hover.png"
-            xpos 1600
-            ypos 40
-            action ShowMenu("preferences")
-
-        if main_menu:
-            imagebutton:
-                idle "images/ui/titleidle.png"
-                hover "images/ui/titlehvr.png"
-                xpos 1300
-                ypos 960
-                action ShowMenu("main_menu")
-        else:
-            imagebutton:
-                idle "images/ui/titleidle.png"
-                hover "images/ui/titlehvr.png"
-                xpos 1300
-                ypos 960
-                action MainMenu()
-
-        imagebutton:
-            idle "images/ui/exitidle.png"
-            hover "images/ui/exithvr.png"
-            xpos 1600
-            ypos 960
-            action Quit(confirm=True)
-
-
-        
         vbox:
-            spacing 10
+
             hbox:
                 box_wrap True
-                xpos 300
-                ypos 175
-                spacing 250
+
                 if renpy.variant("pc") or renpy.variant("web"):
 
                     vbox:
-                        ypos 70
-                        spacing 10
                         style_prefix "radio"
                         label _("Display")
-                        imagebutton:
-                            idle "images/UI/wdwidle.png"
-                            hover "images/UI/wdwhvr.png"
-                            action Preference("display", "window")
-                        imagebutton:
-                            idle "images/UI/fullscrnidle.png"
-                            hover "images/UI/fullscrnhvr.png"
-                            action Preference("display", "fullscreen")
+                        textbutton _("Window") action Preference("display", "window")
+                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
                 vbox:
-                    ypos 70
-                    label _("Text")
-                    style_prefix "slider"
-                    textbutton _("Text Speed")
-                    hbox:
-                        xpos 30
-                        bar value Preference("text speed")
-                    textbutton _("Auto-Forward Time")
-                    hbox: 
-                        xpos 30
-                        bar value Preference("auto-forward time")
+                    style_prefix "check"
+                    label _("Skip")
+                    textbutton _("Unseen Text") action Preference("skip", "toggle")
+                    textbutton _("After Choices") action Preference("after choices", "toggle")
+                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## Additional vboxes of type "radio_pref" or "check_pref" can
                 ## be added here, to add additional creator-defined preferences.
@@ -907,24 +821,30 @@ screen preferences():
             hbox:
                 style_prefix "slider"
                 box_wrap True
-                xpos 300
-                ypos 175
-                spacing 250
+
                 vbox:
-                    label _("Sound")
+
+                    label _("Text Speed")
+
+                    bar value Preference("text speed")
+
+                    label _("Auto-Forward Time")
+
+                    bar value Preference("auto-forward time")
+
+                vbox:
+
                     if config.has_music:
-                        textbutton _("Music Volume")
+                        label _("Music Volume")
 
                         hbox:
-                            xpos 25
                             bar value Preference("music volume")
 
                     if config.has_sound:
 
-                        textbutton _("Sound Volume")
+                        label _("Sound Volume")
 
                         hbox:
-                            xpos 25
                             bar value Preference("sound volume")
 
                             if config.sample_sound:
@@ -932,10 +852,9 @@ screen preferences():
 
 
                     if config.has_voice:
-                        textbutton _("Voice Volume")
+                        label _("Voice Volume")
 
                         hbox:
-                            xpos 25
                             bar value Preference("voice volume")
 
                             if config.sample_voice:
@@ -947,28 +866,6 @@ screen preferences():
                         textbutton _("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
-
-                vbox:
-                    xpos -350
-                    spacing 10
-                    style_prefix "check"
-                    label _("Skip")
-                    imagebutton:
-                                idle "images/UI/unstxtidle.png"
-                                hover "images/UI/unstxthvr.png"
-                                action Preference("skip", "toggle")
-                    imagebutton:
-                                xpos  300 
-                                ypos -90
-                                idle "images/UI/afchoidle.png"
-                                hover "images/UI/afchohvr.png"
-                                action Preference("after choices", "toggle")
-                    imagebutton:
-                                ypos -70
-                                idle "images/UI/transidle.png"
-                                hover "images/UI/transhvr.png"                      
-                                action InvertSelected(Preference("transitions", "toggle"))
-
 
 
 style pref_label is gui_label
@@ -1053,44 +950,109 @@ style slider_vbox:
 screen history():
 
     tag menu
+    
+    
+    frame: 
+        background Frame("#08233f95", 10, 10)
+
+    
+
+
 
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0, spacing=gui.history_spacing):
-
+    vpgrid:
+        
         style_prefix "history"
 
+        cols 1
+        yinitial 5.0
+        spacing 20
+
+        mousewheel True
+        draggable True
+        scrollbars "vertical"
+        #xalign 0.0
+        #yalign 0.1
+
+        #area (0 , 1500, 1500, 840)
+
+        side_ysize 750
+        side_xsize 1800
+        side_xpos 70
+        side_ypos 200
+        #frame background None top_margin 100
+        #frame background None bottom_margin 50
         for h in _history_list:
 
             window:
-
+                xoffset -150
+                #spacing 10
                 ## This lays things out properly if history_height is None.
-                has fixed:
-                    yfit True
+                #has fixed:
+                #    yfit True
 
                 if h.who:
 
+
                     label h.who:
                         style "history_name"
-                        substitute False
 
-                        ## Take the color of the who text from the Character,
-                        ## if set.
+                        ## Take the color of the who text from the Character, if
+                        ## set.
                         if "color" in h.who_args:
                             text_color h.who_args["color"]
-
-                $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                text what:
+                
+                text h.what:
+                    font "fonts1/Patrick_Hand/PatrickHand-Regular.ttf"
+                    line_spacing 20
                     substitute False
+                
+            #
+
+            null height 20
+
+            add Solid("#FFFFFF40", xsize=1500, ysize=1):
+                #yoffset 0
+                xpos 100
 
         if not _history_list:
             label _("The dialogue history is empty.")
+    
+    add "gui/Backlog frame.png"
+    
+
+    add "gui/Backlog footer.png" yalign 1.075
 
 
-## This determines what tags are allowed to be displayed on the history screen.
 
-define gui.history_allow_tags = { "alt", "noalt", "rt", "rb", "art" }
+    hbox:
+            xalign 0.9
+            yalign 0.975
+            spacing 40
+            textbutton "SAVE":
+                text_style "menu"
+                action ShowMenu("save")
+            
+            textbutton "LOAD":
+                text_style "menu"
+                action ShowMenu("load")
+            
+            textbutton "Q.SAVE":
+                text_style "menu"
+                action QuickSave()
+            
+            textbutton "Q.LOAD": 
+                text_style "menu"
+                action QuickLoad()
+            
+            textbutton "SETTINGS":  
+                text_style "menu"
+                action ShowMenu("preferences")
+            
+
+
 
 
 style history_window is empty
@@ -1755,10 +1717,11 @@ style scrollbar:
     thumb Frame("gui/phone/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
 
 style vscrollbar:
-    variant "small"
     xsize gui.scrollbar_size
-    base_bar Frame("gui/phone/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/phone/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    unscrollable "hide"
+    ## Prevents Ren'Py from showing a scrollbar when there's nothing to scroll
 
 style slider:
     variant "small"
@@ -1779,7 +1742,5 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
-
-
 
 
