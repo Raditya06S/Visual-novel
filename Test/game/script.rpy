@@ -4,7 +4,7 @@ transform left_pos:
     xalign 0.0
     yalign 1.0
     xoffset -60
-    yoffset 87  # move down by 50 pixels (positive = downward)
+    yoffset 87  
 
 transform center_pos:
     xalign 0.5
@@ -23,10 +23,25 @@ label splashscreen:
 
     return
 
+screen job_popup(img):
+    modal True
+    zorder 200
 
+    add im.Scale(img, 800, 900):   
+        xalign 0.5
+        yalign 0.5
+        
+        
+
+    
+
+
+    
 
 
 label start:
+
+    stop music fadeout 2.0
 
     "Selamat datang di dunia visual novel"
     "Disini anda dapat merasakan pengalaman dan mempelajari dunia kerja."
@@ -59,7 +74,7 @@ label gender_choice:
 label common:
     
     scene bg room
-    show mc happy at left_pos
+    show mc happy at left_pos 
 
     main "Akhirnya!!!"
     main "Setelah 4 tahun kuliah, aku lulus"
@@ -98,7 +113,8 @@ label common:
     hide mc normal
     show mc confused at left_pos
     main "Sebaiknya aku ambil yang mana ya?"
-    hide mc confused
+    hide mc 
+    window hide
 
     while True:
         menu:
@@ -125,8 +141,46 @@ label common:
 
 
 label interview:
-    show mc normal at left_pos
+    show mc normal at left_pos 
     main "Oke aku udah putusin, aku yakin ini pasti posisi yang cocok buat aku!"
+
+    window hide
+    hide mc
+    
+    if job == "Akuntan":
+        show screen job_popup("images/lamAkun.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+    elif job == "Auditor":
+        show screen job_popup("images/lamAudi.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+    elif job == "Konsultan Pajak":
+        show screen job_popup("images/lamTax.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+    elif job == "Data Analis":
+        show screen job_popup("images/lamData.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+    elif job == "Konsultan Bisnis":
+        show screen job_popup("images/lamBusi.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+
+    window show
+    
+    show mc normal at left_pos
     main "Sebagai anak jurusan akuntansi gak mungkin aku bisa gagal disini"
     main "Sebaliknya aku yakin aku bisa naik jabatan cepat disisni"
     main "Waktunya mempersiapkan diri buat interview, aku harus pastiin buat gak gagal dalam percobaan pertama"
@@ -143,12 +197,53 @@ label interview:
     hide mc normal
     scene bg sky with dissolve
     "satu minggu kemudian"   
-    "Lho Email dari siapa ini? *Baca email* Oh, syukurlah aku masuk tahap interview "
+    scene bg room
+    show mc confused at left_pos
+    main "Lho Email dari siapa ini?" 
+    hide mc
+    window hide
+
+    if job == "Akuntan":
+        show screen job_popup("images/mailAkun.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+    elif job == "Auditor":
+        show screen job_popup("images/mailAudi.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+    elif job == "Konsultan Pajak":
+        show screen job_popup("images/mailTax.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+    elif job == "Data Analis":
+        show screen job_popup("images/mailData.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+    elif job == "Konsultan Bisnis":
+        show screen job_popup("images/mailBusi.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+
+    window show
+
+    show mc happy at left_pos
+    main "Oh, syukurlah aku masuk tahap interview "
+    hide mc
     "Saat itu aku merasa sangat senang. Tapi ini belum apa-apa, masih ada interview yang perlu aku hadapi sebelum memasuki dunia kerja"
     "Aku sudah bekerja keras sampai saat ini jadi akan kupastikan aku diterima di perusahaan ini"
     scene bg office with dissolve
 
-        show mc happy at left_pos
+    show mc happy at left_pos
     main "Selamat siang"
     hide mc happy
     "Saat aku memasuki ruangan interview terdapat seorang pria dengan penampilan rapih yang menyambutku"
@@ -156,32 +251,58 @@ label interview:
     hrd "Selamat siang. Nama saya adalah Paul, saya yang akan bertanggung jawab sebagai interviewer hari ini."
     show mc happy at left_pos
     main "Selamat siang, nama saya [main] saya adalah lulusan Akuntansi dari Universitas A."
+    hide mc
     "Setelah itu aku melanjutkan perkenalan diri dari riwayat pendidikan, pengalaman, keahlian, sampai pencapaian yang pernah saya capai."
     "Setelah itu pak Paul beberapa kali melemparkan pertanyan kepadaku, tapi dengan latihan dan riset yang telah lakukan dengan sebelumnya."
     "Aku berhasil melalui pertanyaan yang dilemparkan padaku dengan mudah."
     show hrd thinking
     hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
     show hrd happy
-    hrd "selamat [main] anda diterima di perusahaan kami, sebagai [job] "
+    hrd "Selamat [main] anda diterima di perusahaan kami, sebagai [job] "
     show hrd confused
-    hrd "Berikut jobdesk *popup jobdesk* yang nantinya akan dikerjakan selama Anda menjadi [job] ."
+    hrd "Berikut jobdesk yang nantinya akan dikerjakan selama Anda menjadi [job] ."
     hide mc
     hide hrd
     window hide
-    show job contract at center
-    with dissolve 
-    
-    pause 1.5  # show for 1.5 seconds
+   
+    if job == "Akuntan":
+        show screen job_popup("images/jobAkun.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+    elif job == "Auditor":
+        show screen job_popup("images/jobAudi.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+    elif job == "Konsultan Pajak":
+        show screen job_popup("images/jobTax.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+    elif job == "Data Analis":
+        show screen job_popup("images/jobData.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
+    elif job == "Konsultan Bisnis":
+        show screen job_popup("images/jobBusi.png")
+        with dissolve
+        with Pause(1.5)
+        hide screen job_popup
+        with dissolve
 
-    hide job contract
-    with dissolve
-    show hrd confused
-    show mc happy at left_pos
-    window show
+
+    window show 
+    show hrd thinking
     hrd "Apakah ada yang ingin ditanyakan?"  
     show hrd normal
     hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
-    hide mc normall
+    hide mc normal
 
     if job == "Akuntan":
         jump accountant
@@ -195,7 +316,6 @@ label interview:
         jump business
 
     return
-
 
 
 
