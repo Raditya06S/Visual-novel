@@ -9,11 +9,17 @@ show mc shock at left_pos
 main "Duh pencatatannya banyak banget ya."
 
 main "Pembelian bahan baku sebanyak 500 pack dengan nilai Rp100.000 per packnya." 
+hide mc
 "*scene input transaksi* "
 show mc confused at left_pos 
 main "Lho, kok ada pembelian Uphone yang harganya Rp18.000.000 per 1pcsnya dengan jumlah pembelian 10 unit. Untuk apa ya kira kira? "
 hide mc 
 "*tak selang lama ada telepon masuk* "
+play sound "phoneRing.wav"
+window hide
+pause 5.0
+stop sound fadeout 1.0
+window show
 show randP
 randP " Selamat pagi, saya *sensor nama* salah satu pekerja di bagian purchasing dari perusahaan ABC"
 show mc normal at left_pos
@@ -22,6 +28,7 @@ randP "Bisa kah Anda mencatat pembelian barang X yang ada di transaksi perusahaa
 randP "Apabila Anda mencatat menjadi 8 unit nantinya akan saya transfer uang sebesar 10 Juta Rupiah."
 hide randP
 hide mc normal
+window hide
 
 while True:
     menu:
@@ -45,17 +52,29 @@ scene bg office
 show mc happy at left_pos
 main "wih transferannya sudah masuk dong. ."
 main "Enaknya dipake buat beli apa ya???  "  
-show bos  
+show bos confused  
 bos "Lho kamu dapet Transferan? "
 main "hehehe iya, soalnya kemarin baru aja selesaiin tugas khusus soalnya.  "
+show bos thinking
 bos "Lho tugas khusus?"
 hide mc normal
 hide bos
+
+if gender == "male":
+        show bad mmc
+else:
+        show bad fmc
+    
+
 
 "[main], tidak mengetahui kalau posisinya dalam bahaya. Karena pada akhir periode produksi, perusahaan melakukan opname yang dilakukan oleh auditor. Setelah  auditor menganalisa pembelian yang telah dilakukan berdasarkan pencatatan akuntan, "
 "diketahui ternyata ada salah satu karyawan yang telah menggelapkan dana perusahaan untuk membeli Uphone sebanyak 10 unit, namun tercatat hanya 8 unit. " 
 "yang ternyata pembelian tersebut tercatat dalam transaksi pembelian perusahaan dan menggunakan budget perusahaan. " 
 "Untuk selanjutnya karyawan yang menggelapkan dana perusahaan ABC dipecat secara tidak hormat, dan kamu sebagai akuntan yang terlibat dalam fraud dengan cara menerima suap untuk menutupi penggelapan dana juga ikut dipecat dan dipidanakan "
+with dissolve
+
+
+
 return
 
 
@@ -64,7 +83,7 @@ return
 label halfAccountant:
 show mc normal at left_pos
 main "Mohon maaf pak, apabila disini tercatat pembeliannya sejumlah 10 unit saya akan tetap catat pembelian sesuai transaksi. Terima kasih "
-
+hide mc
 # *Menutup telepon* 
 
 "Saat sudah selesai mencatat keseluruhan transaksi, pencatatannya diberikan ke general accountant yang ada kantor maupun kantor klien. "
@@ -91,6 +110,7 @@ main "Hmm.., tawaran yang menarik *sembari mencari informasi perusahaan tersebut
 show mc confused at left_pos
 main"Ambil atau engga ya tawaran menarik ini?"
 hide mc 
+window hide
 
 while True:
     menu:
@@ -130,8 +150,12 @@ show mc shock at left_pos
 main "Eh..!!, kenapa ini aku kena layoff, padahal aku ga buat kesalahan sama sekali lohh…"
 hide mc 
 
-"Dari teman PT ABC yang mendengar hal tersebut, kamu dilaporkan ke owner perusahaan dan ke pimpinan PT NBJ. Yang mengakibatkan kamu saat ini dipecat dari 2 perusahaan yang tadinya ditempati. "
-    
+if gender == "male":
+        show bad mmc
+else:
+        show bad fmc
+
+"Dari teman PT ABC yang mendengar hal tersebut, kamu dilaporkan ke owner perusahaan dan ke pimpinan PT NBJ. Yang mengakibatkan kamu saat ini dipecat dari 2 perusahaan yang tadinya ditempati. "    
 "Sehingga saat ini kamu tidak memiliki pekerjaan lagi dikarenakan semua perusahaan menolak lamaran kamu karena tidak memiliki integritas dan loyalitas. "
 
 return
@@ -147,8 +171,13 @@ hide mc
 
 "Dan 2 bulan dari naiknya kamu menjadi general accountant. Pimpinan perusahaan setuju untuk menaikan posisi kamu menjadi direktur utama dari PT. NBJ"
 
+if gender == "male":
+        show good mmc
+else:
+        show good fmc
 
 return 
+
 
 
 
