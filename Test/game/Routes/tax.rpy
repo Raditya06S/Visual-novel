@@ -40,7 +40,7 @@ show mc shock at left_pos
 main "Duh.... gimana nih ya....."
 hide mc normal
 hide manKeu
-
+window hide
 
 while True:
     menu:
@@ -59,6 +59,11 @@ label badTaxation:
     hide mc 
     hide manKeu
 
+    if gender == "male":
+        show bad mmc
+    else:
+        show bad fmc
+
     "Tanpa yang disadari, hal yang kamu ambil merupakan keputusan yang sangat berbahaya, karena dengan perubahan pencatatan yang kamu lakukan itu menyebabkan perusahaan langsung diaudit oleh pemerintah. "
     "Dari temuan pemerintah ternyata terdapat perbedaan pencatatan, dan langsung dikategorikan sebagai fraud"
     "Maka dari itu PT XBJ langsung didenda dan dipidanakan berdasarkan peraturan perpajakan yang berlaku, setelah kejadian tersebut kamu dikeluarkan dari perusahaan dan diblacklist oleh perusahaan lainnya akibat dari tindakan yang diambil. "
@@ -73,12 +78,18 @@ label goodTaxation:
     show manKeu confused
     managerKeu " ooooo seperti itu....."
     hide manKeu
+    hide mc
 
     "Saat ini Barulah diketahui jika manager yang menaungi PT XBJ merupakan karyawan baru yang dipindahkan dari tim produksi* "
 
     show mc happy at left_pos
     main " Tidak masalah bu meskipun nanti nominalnya besar, kita bisa memanfaatkan kredit pajak yang ada di Indonesia. "
     hide mc normal
+
+    if gender == "male":
+        show good mmc
+    else:
+        show good fmc
 
     "Dari keputusan yang kamu ambil, meskipun terlihat pendapatannya besar yang mengakibatkan pembayarannya besar tapi keputusan yang kamu ambil sudah betul dikarenakan perusahaan juga bisa mengkreditkan pajak yang dibayar."
     "Oleh karena itu, dari performa kamu yang  jeli dalam kasus perpajakan di PT XBJ, maka kamu dipromosikan sebagai Head Staff Taxation. "
