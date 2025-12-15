@@ -17,7 +17,7 @@ scene bg cshop
 show sk happy
 staffKopi "Halo [main], kamu pasti ditugaskan oleh perusahan NJB untuk membantu dalam analisa data penjualan kan? "
 show mc happy at left_pos
-main "betul pak hehehe, kebetulan saya membantu di sektor sales forecasting"
+main "betul kak hehehe, kebetulan saya membantu di sektor sales forecasting"
 show sk concerned
 staffKopi "Oh kebetulan, untuk saat ini sales kita penjualannya agak sedikti drop. "
 hide mc normal
@@ -35,6 +35,7 @@ show sk normal
 staffKopi "tapi kalo kamu liat, setiap coffee shop yang jual matcha itu laku keras, kalo kita ikutin pasti laku juga."
 hide sk
 hide mc normal
+window hide
 
 while True:
     menu:
@@ -51,10 +52,14 @@ label badAnalyst:
     hide mc normal
     hide sk
 
+    if gender == "male":
+        show bad mmc
+    else:
+        show bad fmc
+
+
     "Dengan adanya mengikuti trend yang ada di internet tidak semuanya berjalan dengan mulus. "
-
     "Dari resep dan racikan yang dibuat ternyata menghasilkan hasil yang kurang baik, namun dari keputusan dari staff coffee shop adalah tetap menjual dengan racikan dari internet "
-
     "Hingga pada waktu perilisan menu baru, sejumlah pelanggan memesan dan mereview menu terbaru itu dan mengatakan jika menu tersebut tidak rekomen dikarenakan rasanya yang tidak enak. "
     "Sehingga dari kejadian tersebut Tumbass pun mengalami kebangkrutan yang dimana penjualannya makin merosot. "
 
@@ -71,6 +76,10 @@ label goodAnalyst:
     hide mc normal
     hide sk
 
+    if gender == "male":
+        show good mmc
+    else:
+        show good fmc
 
     "Berdasarkan data yang diberikan oleh Staff Tumbass, kamu menemukan sebuah penemuan menarik yang dimana ternyata penjualan terbanyak sebelum trend matcha jatuh kepada varian latte "
     
@@ -82,6 +91,7 @@ label goodAnalyst:
 
 
     return
+
 
 
 
