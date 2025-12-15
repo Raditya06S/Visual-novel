@@ -4,10 +4,11 @@ scene bg sky
 
 scene bg office 
 show mc normal at left_pos
-main "selamat pagi pak/bu, perkenalkan saya [main] dari PT NBJ, hari ini saya ditugaskan sebagai consultan"
-show bos
+main "selamat pagi pak, perkenalkan saya [main] dari PT NBJ, hari ini saya ditugaskan sebagai consultan"
+show bos happy
 bos "Halo, selamat pagiii, wah selamat datang di PT Jaya makmur. Mulai hari ini kamu ditugaskan untuk membantu bagian produksi dan procurement yaa...."
-main "oke siap bu..."
+main "oke siap pak..."
+show bos normal
 bos "sipp...."
 hide bos 
 hide mc normal
@@ -19,11 +20,11 @@ scene bg sky
 scene bg admin
 
 show mc confused at left_pos
-main "Dalam sebulan PT Jaya Makmur mampu memproduksi berapa meja, pak/bu?"
+main "Dalam sebulan PT Jaya Makmur mampu memproduksi berapa meja, pak?"
 show staff normal
 staff "Dalam sebulan target produksi kita itu sekitar 10.000 unit, tapi kita menaruh harga diangka 1.000.000 rupiah agar tidak terlalu mahal"
 show mc happy at left_pos
-main "wihhhh banyak juga ya pak/bu...."
+main "wihhhh banyak juga ya pak...."
 show staff happy
 staff "iya kebetulan kita memaksimalkan kemampuan mesin produksi kita, meskipun mesin yang kita miliki tergolong tua..."
 hide mc 
@@ -32,7 +33,7 @@ hide staff
 show staff shock
 staff "duh... kok bisa begini ya....."
 show mc normal at left_pos
-main "ada kemungkinan unitnya sudah terlalu lama digunakan pak/bu, dan tidak ada waktu untuk cooling down(istirahat)..."
+main "ada kemungkinan unitnya sudah terlalu lama digunakan pak dan tidak ada waktu untuk cooling down(istirahat)..."
 show staff thinking
 staff "duh.... buat sekarang gimana ya..... diperbaiki atau beli unit baru ya?"
 hide mc normal
@@ -53,6 +54,10 @@ label badBusiness:
     staff "oooo betul juga, nanti saya sampaikan ke pihak keuangan yah....."
     hide mc normal
     hide staff
+    if gender == "male":
+        show bad mmc
+    else:
+        show bad fmc
 
     "Dari keputusan yang kamu ambil kurang tepat, karena setelah diperbaiki pun mesin yang dimiliki masih tetap rusak dan membuat produksi tidak berjalan secara optimal.  "
     "sehingga dari hal tersebut membuat perusahaan mengalami profit loss setiap bulannya. "
@@ -71,7 +76,7 @@ label goodBusiness:
     window hide
     show keterangan at center_pos
     with dissolve 
-    pause 1.5  # show for 1.5 seconds
+    pause 1.5  
     "Harusny dengan penjualan unit saat ini dan pencicilan pembayaran pun mampu menutup produksi saat ini"
     hide keterangan
     with dissolve
@@ -83,13 +88,18 @@ label goodBusiness:
     window hide
     show proyeksi at center_pos
     with dissolve 
-    pause 1.5  # show for 1.5 seconds
+    pause 1.5  
     hide proyeksi
     with dissolve
 
     show staff normal
     staff " baiklah akan saya sampaikan dulu ke bagian procurement ya.... (pembelian)"
     hide staff
+
+    if gender == "male":
+        show good mmc
+    else:
+        show good fmc
 
     "Tak lama kemudian, pihak procurement menyetujui pembelian mesin produksi yang baru. Keputusan yang kamu berikan kepada staf produksi pun terbukti tepat"
     "Karena dari adanya unit produksi yang baru, jumlah produksi pun meningkat begitupun dari kualitas yang dihasilkan juga. Dan semenjak adanya unit baru menunjukan profit yang terus meningkat. "
