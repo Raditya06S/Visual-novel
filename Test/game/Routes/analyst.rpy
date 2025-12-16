@@ -1,6 +1,6 @@
 label analyst:
 scene bg sky
-
+play music "kerja.mp3"
 "*Hari Pertama bekerja sebagai data analyst* "
 
 "Pada saat ini kamu ditempatkan sebagai sales analyst di perusahaan yang bergerak di bidang FnB yang bernama “Tumbas”." 
@@ -24,7 +24,6 @@ hide mc normal
 hide sk
 
 "*Menampilkan data penjualan dan list produk yang terjual bulan ini dan bulan sebelumnya*"
-
 show mc shock at left_pos
 main "lho hampir semua penjualan di semua produk mengalami penurunan ya......"
 show sk thinking
@@ -36,6 +35,7 @@ staffKopi "tapi kalo kamu liat, setiap coffee shop yang jual matcha itu laku ker
 hide sk
 hide mc normal
 window hide
+stop music
 
 while True:
     menu:
@@ -45,28 +45,33 @@ while True:
             jump goodAnalyst
 
 label badAnalyst:
+    play music "afterShock.mp3" loop
     show mc normal at left_pos
     main " baik pak sepertinya kalau mengikuti trend di internet juga tidaklah buruk. "
     show sk happy
     staffKopi " oke baik, mulai besok kita coba racik sesuai dengan resep yang ada di internet ya..."
     hide mc normal
     hide sk
-
+    stop music
     if gender == "male":
         show bad mmc
     else:
         show bad fmc
-
+    play music "badend.flac" loop
 
     "Dengan adanya mengikuti trend yang ada di internet tidak semuanya berjalan dengan mulus. "
     "Dari resep dan racikan yang dibuat ternyata menghasilkan hasil yang kurang baik, namun dari keputusan dari staff coffee shop adalah tetap menjual dengan racikan dari internet "
     "Hingga pada waktu perilisan menu baru, sejumlah pelanggan memesan dan mereview menu terbaru itu dan mengatakan jika menu tersebut tidak rekomen dikarenakan rasanya yang tidak enak. "
     "Sehingga dari kejadian tersebut Tumbass pun mengalami kebangkrutan yang dimana penjualannya makin merosot. "
-
+    stop music
+    window hide
+    play music "cgbad.flac"
+    pause 9.0
     return
 
 
 label goodAnalyst:
+    play music "interview.wav"
     show mc confused at left_pos
     main "pak saya mau meminta data yang lebih banyak"
     show mc normal at left_pos
@@ -75,12 +80,12 @@ label goodAnalyst:
     staffKopi "Baik, berikut semua data yang berkaitan dengan penjualan dalam 2 bulan terakhir. "
     hide mc normal
     hide sk
-
+    stop music
     if gender == "male":
         show good mmc
     else:
         show good fmc
-
+    play music "goodend.wav" loop
     "Berdasarkan data yang diberikan oleh Staff Tumbass, kamu menemukan sebuah penemuan menarik yang dimana ternyata penjualan terbanyak sebelum trend matcha jatuh kepada varian latte "
     
     "Maka dari itu mengingat Tumbass belum ada menu varian Matcha, maka Tumbass pun meracik 2 Menu baru, Coffe-Matcha dan Matcha latte"
@@ -88,7 +93,10 @@ label goodAnalyst:
     "Keputusan membuat 2 menu baru tersebut, ternyata membuat dampak positif, yang dimana penjualan Tumbass meningkat drastis." 
     "Hal ini dikarenakan hampir keseluruhan pelanggan yang datang, memesan kedua menu terbaru tersebut dikarenkan memiliki rasa yang unik dan berbeda dengan matcha yang ada di coffee shop diluar."
     "Dengan demikian, keputusan yang kamu ambil sudah tepat."
-
+    stop music 
+    window hide
+    play music "cggood.mp3"
+    pause 5.0
 
     return
 
