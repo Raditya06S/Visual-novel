@@ -2,6 +2,7 @@ label accountant:
 scene bg sky
 scene bg office
 
+play music "kerja.mp3"
 "Pada hari pertama kerja, [main] menerima pekerjaaan dari klien yang berasal dari perusahaan ABC yang bergerak di industri manufaktur. "
 "jobdesk utama anda adalah mencatat transaksi pembelian yang dilakukan perusahaan klien dari perusahaan rekanan klien vendor."
 
@@ -14,13 +15,21 @@ hide mc
 show mc confused at left_pos 
 main "Lho, kok ada pembelian Uphone yang harganya Rp18.000.000 per 1pcsnya dengan jumlah pembelian 10 unit. Untuk apa ya kira kira? "
 hide mc 
+stop music 
 "*tak selang lama ada telepon masuk* "
+
+
 play sound "phoneRing.wav"
+
 window hide
 pause 5.0
 stop sound fadeout 1.0
 window show
+play sound "phoneUp.mp3"
 show randP
+
+play music "afterShock.mp3"
+
 randP " Selamat pagi, saya *sensor nama* salah satu pekerja di bagian purchasing dari perusahaan ABC"
 show mc normal at left_pos
 main "Baik pak, ada yang bisa saya bantu?"
@@ -37,7 +46,10 @@ while True:
         "Catat 10 unit": 
             jump halfAccountant
 
+
+
 label badAccountant:
+
 show mc normal at left_pos
 main "baik pak, untuk pencatatannya sudah saya tulis sebesar pembelian 8 unit."
 show randP
@@ -52,7 +64,9 @@ scene bg office
 show mc happy at left_pos
 main "wih transferannya sudah masuk dong. ."
 main "Enaknya dipake buat beli apa ya???  "  
+stop music
 show bos confused  
+play sound "shock.mp3"
 bos "Lho kamu dapet Transferan? "
 main "hehehe iya, soalnya kemarin baru aja selesaiin tugas khusus soalnya.  "
 show bos thinking
@@ -60,32 +74,37 @@ bos "Lho tugas khusus?"
 hide mc normal
 hide bos
 
+
 if gender == "male":
         show bad mmc
 else:
         show bad fmc
     
 
-
+play sound "badend.flac" loop
 "[main], tidak mengetahui kalau posisinya dalam bahaya. Karena pada akhir periode produksi, perusahaan melakukan opname yang dilakukan oleh auditor. Setelah  auditor menganalisa pembelian yang telah dilakukan berdasarkan pencatatan akuntan, "
 "diketahui ternyata ada salah satu karyawan yang telah menggelapkan dana perusahaan untuk membeli Uphone sebanyak 10 unit, namun tercatat hanya 8 unit. " 
 "yang ternyata pembelian tersebut tercatat dalam transaksi pembelian perusahaan dan menggunakan budget perusahaan. " 
 "Untuk selanjutnya karyawan yang menggelapkan dana perusahaan ABC dipecat secara tidak hormat, dan kamu sebagai akuntan yang terlibat dalam fraud dengan cara menerima suap untuk menutupi penggelapan dana juga ikut dipecat dan dipidanakan "
 with dissolve
+stop music
+window hide
+play sound"cgbad.flac"
 
-
-
+pause 9.0
 return
 
 
     
 
 label halfAccountant:
+stop music
 show mc normal at left_pos
 main "Mohon maaf pak, apabila disini tercatat pembeliannya sejumlah 10 unit saya akan tetap catat pembelian sesuai transaksi. Terima kasih "
 hide mc
-# *Menutup telepon* 
+play sound "phoneUp.mp3"
 
+play music "kerja.mp3" loop
 "Saat sudah selesai mencatat keseluruhan transaksi, pencatatannya diberikan ke general accountant yang ada kantor maupun kantor klien. "
 "Pada waktu akhir periode produksi, perusahaan melakukan opname yang dilakukan oleh auditor." 
 "Setelah  auditor menganalisa pembelian yang telah dilakukan berdasarkan pencatatan akuntan, diketahui ternyata ada salah satu karyawan yang telah menggelapkan dana perusahaan untuk membeli Uphone sebanyak 10 unit.  "
@@ -111,6 +130,7 @@ show mc confused at left_pos
 main"Ambil atau engga ya tawaran menarik ini?"
 hide mc 
 window hide
+stop music
 
 while True:
     menu:
@@ -125,6 +145,8 @@ main "Boleh lah aku coba, toh.., masih muda butuh pengalaman banyak *percaya dir
 
 scene bg sky
 "Beberapa minggu kemudian"
+
+play music "afterShock.mp3" loop
 
 scene bg office
 show mc shock at left_pos
@@ -154,29 +176,41 @@ if gender == "male":
         show bad mmc
 else:
         show bad fmc
-
+stop music
+play music"badend.flac" loop
 "Dari teman PT ABC yang mendengar hal tersebut, kamu dilaporkan ke owner perusahaan dan ke pimpinan PT NBJ. Yang mengakibatkan kamu saat ini dipecat dari 2 perusahaan yang tadinya ditempati. "    
 "Sehingga saat ini kamu tidak memiliki pekerjaan lagi dikarenakan semua perusahaan menolak lamaran kamu karena tidak memiliki integritas dan loyalitas. "
-
+stop music
+play music "cgbad.flac" 
+pause 9.0
 return
 
 label fingoodAccountant:
+play music "interview.wav" loop
 
 scene bg office
 show mc confused at left_pos
 main "Tolak ah, ngapain ambil double job kalau bisa berkarir lebih baik disini..."
 hide mc
-"Dari keputusan yang kamu ambil, kinerja perusahaan yang saat ini kamu tempati (PT. NBJ) memiliki kualitas yang sangat baik dari posisi general accountant yang kamu tempati,"
-"hal itu terbukti dari jarangnya fraud yang terjadi, hingga kualitas laporan yang dibuat oleh team accounting menjadi sangat baik"
-
-"Dan 2 bulan dari naiknya kamu menjadi general accountant. Pimpinan perusahaan setuju untuk menaikan posisi kamu menjadi direktur utama dari PT. NBJ"
 
 if gender == "male":
         show good mmc
 else:
         show good fmc
 
-return 
+play music "goodend.wav" loop
+"Dari keputusan yang kamu ambil, kinerja perusahaan yang saat ini kamu tempati (PT. NBJ) memiliki kualitas yang sangat baik dari posisi general accountant yang kamu tempati,"
+"hal itu terbukti dari jarangnya fraud yang terjadi, hingga kualitas laporan yang dibuat oleh team accounting menjadi sangat baik"
+"Dan 2 bulan dari naiknya kamu menjadi general accountant. Pimpinan perusahaan setuju untuk menaikan posisi kamu menjadi direktur utama dari PT. NBJ"
+stop music
+window hide
+play music  "cggood.mp3"
+
+pause 5.0
+
+
+return
+
 
 
 
