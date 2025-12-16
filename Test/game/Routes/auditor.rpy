@@ -1,6 +1,7 @@
 label auditor:
 
 scene bg sky
+play music "kerja.mp3"
 "Pada hari pertama kerja, [main] menerima pekerjaaan dari klien yang berasal dari perusahaan BBKN yang merupakan sebuah perusahaan startup yang bergerak di industri Perbankan." 
 "Jobdesk utama kamu adalah mengecek setiap transaksi arus kas, baik arus kas masuk dan keluar yang ada di perusahaan."
 scene bg office
@@ -23,7 +24,16 @@ window show
 show mc confused at left_pos
 main "hmm, cash flow from operating activities udah sesuai, tapi kok cash flow from financing activites ada yang aneh ya??"
 hide mc 
-"Tidak lama ada telepon masuk dari Kakak melalui hp*"
+"Tidak lama ada telepon masuk dari Kakak melalui hp"
+stop music
+play sound "cpRing.mp3"
+window hide
+pause 5.0
+stop sound fadeout 1.0
+window show
+play sound "cpUp.wav"
+pause 1.0
+play music "kerja.mp3"
 show kakak happy
 kakak "Halo [main], kamu sekarang  sedang mengaudit perusahaan aku ya?. Kalau boleh siapa yang mengaudit, kenal kah sama rekan kerja kamu?, gimana orangnya? "
 show mc happy at left_pos
@@ -45,6 +55,7 @@ hide mc
 hide kakak
 window hide
 
+
 while True:
     menu:
         "Biarkan":
@@ -54,24 +65,31 @@ while True:
 
 
 label badAuditor:
+stop music
+play music "aftershock.mp3"loop
 show mc normal at left_pos
 main "Oke deh kak, aku biarin saja yaa... "  
 show kakak happy
 kakak "okee Thankyouuu yaa"
 hide mc normal
 hide kakak
-
+stop music
 if gender == "male":
         show bad mmc
 else:
         show bad fmc
+play music "badend.flac" loop
 "Pada saat akhir periode akuntansi (akhir tahun), BBKN telah memublikasikan laporannya. Namun, dikarenakan publik tidak mudah dibodohi dengan laporan yang tidak benar"
 "Para investor mencabut segala macam bentuk investasi yang ada di BBKN. Sehingga kini BBKN menyatakan diri jika perusahaannya bangkrut, dan kakak-mu juga dipecat."
-  
+stop music
+window hide
+play music "cgbad.flac"
+pause 9.0
 return
 
 
 label halfAuditor:
+    
     show mc normal at left_pos
     main "waduh sorry kak, untuk hal ini aku gk bisa bantu, jadi aku catat apa adanya kak.."
     show kakak normal
@@ -82,6 +100,7 @@ label halfAuditor:
     hide mc normal
     hide kakak
     window hide
+    stop music
 
 
 menu:
@@ -91,12 +110,15 @@ menu:
         jump fingoodAuditor
 
 label finbadAuditor:
+    play music "afterShock.mp3"
     show mc confused at left_pos
     main "Yaudah deh aku biarin buat gk jadi temuan"
     show kakak happy
     kakak "Asiikkk, nanti HPnya aku beliin pas pulang kerja yaa. Thankyouuuu"
     hide mc 
     hide kakak
+    stop music 
+    play music "badend.flac"
 
     if gender == "male":
         show bad mmc
@@ -105,10 +127,16 @@ label finbadAuditor:
     "Pada saat akhir periode akuntansi (akhir tahun). Laporan sudah dipublikasikan oleh perusahaan BBKN, namun dikarenakan publik tidak mudah dibodohi dengan laporan yang tidak benar," 
     "Hal tersebut menyebabkan para investor mencabut segala macam bentuk investasi yang ada di BBKN. Sehingga kini BBKN menyatakan diri jika perusahaannya bangkrut, dan kakak-mu juga dipecat."
     "Lalu pada saat kamu menelpon kakakmu, ada salah satu rekan kerja yang mendengar percakapan selama di telepon, sehingga atasan mu itu melaporkan ke pimpinan perusahaan dan kamu pun juga dipecat akibat adanya kasus suap dari perusahaan rekanan. "
+    stop music
+    window hide
+    play music"cgbad.flac"
+    pause 9.0
+    
     return
 
 
 label fingoodAuditor:
+    play music "interview.wav"
     show mc shock at left_pos
     main "tetep kak aku gk bisa, soalnya ini menyangkut pekerjaan aku juga, kalo aku biarin yang kenapa kenapa aku juga"
     hide mc
@@ -123,7 +151,9 @@ label fingoodAuditor:
     hide keuCl
     with dissolve
     window show
-
+    stop music
+    
+    play music "goodend.wav" loop
     if gender == "male":
         show good mmc
     else:
@@ -131,6 +161,10 @@ label fingoodAuditor:
 
     "Pada akhirnya, temuan yang kamu dapatkan dicatat sebagai temuan. Dan dari temuan tersebut diberikan ke pimpinan manajemen perusahaan BBKN." 
     "Dan tindakan yang diambil oleh perusahaan BBKN yaitu membuat laporan baru sesuai dengan temuan yang ditemukan. Sehingga dari hal tersebut investor tetap percaya dan perusahaan BBKN tetap berjalan seperti umumnya"
+    stop music
+    window hide
+    play music "cggood.mp3"
+    pause 5.0
 
     return
 
