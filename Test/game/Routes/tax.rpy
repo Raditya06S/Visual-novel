@@ -1,4 +1,5 @@
 label tax:
+play music "kerja.mp3" loop
 scene bg sky
 "Pada hari pertama kamu masuk, kamu ditugaskan untuk mengurus perusahaan XBJ yang bergerak dibidang manufaktur. PT XBJ sendiri pun merupakan induk perusahaan NBJ yang saat ini sedang menaungi kamu."
 "Di PT XBJ pun membutuhkan seorang posisi Taxation untuk mengurus sistematika perpajakan dari penghasilan operasional perusahaan. "
@@ -41,7 +42,7 @@ main "Duh.... gimana nih ya....."
 hide mc normal
 hide manKeu
 window hide
-
+stop music 
 while True:
     menu:
         "Kurangi pencatatan":
@@ -52,6 +53,7 @@ while True:
 
 
 label badTaxation:
+    play music "afterShock.mp3"
     show mc normal at left_pos
     main "siap bu, di pelaporan sudah saya catat dengan pendapatan yang sudah dikurangi."
     show manKeu happy
@@ -63,15 +65,21 @@ label badTaxation:
         show bad mmc
     else:
         show bad fmc
-
+    stop music 
+    play music "badend.flac" loop
     "Tanpa yang disadari, hal yang kamu ambil merupakan keputusan yang sangat berbahaya, karena dengan perubahan pencatatan yang kamu lakukan itu menyebabkan perusahaan langsung diaudit oleh pemerintah. "
     "Dari temuan pemerintah ternyata terdapat perbedaan pencatatan, dan langsung dikategorikan sebagai fraud"
     "Maka dari itu PT XBJ langsung didenda dan dipidanakan berdasarkan peraturan perpajakan yang berlaku, setelah kejadian tersebut kamu dikeluarkan dari perusahaan dan diblacklist oleh perusahaan lainnya akibat dari tindakan yang diambil. "
+    stop music
+    window hide
+    play music "cgbad.flac"
+    pause 9.0 
 
     return
 
 
 label goodTaxation:
+    play music "interview.wav" loop
     show mc normal at left_pos
     main "mohon maaf bu, untuk pencatatannya harus disesuaikan dengan apa yang diterima"
     main "karena apabila pencatatan dikurangi, otomatis nanti DJP akan langsung menyadari dan kita bisa dipidanakan. "
@@ -86,11 +94,18 @@ label goodTaxation:
     main " Tidak masalah bu meskipun nanti nominalnya besar, kita bisa memanfaatkan kredit pajak yang ada di Indonesia. "
     hide mc normal
 
+    stop music
     if gender == "male":
         show good mmc
     else:
         show good fmc
-
+    
+    play music "goodend.wav" loop
     "Dari keputusan yang kamu ambil, meskipun terlihat pendapatannya besar yang mengakibatkan pembayarannya besar tapi keputusan yang kamu ambil sudah betul dikarenakan perusahaan juga bisa mengkreditkan pajak yang dibayar."
     "Oleh karena itu, dari performa kamu yang  jeli dalam kasus perpajakan di PT XBJ, maka kamu dipromosikan sebagai Head Staff Taxation. "
+    stop music
+    window hide
+    play music "cggood.mp3" loop
+    pause 5.0
+    
     return
