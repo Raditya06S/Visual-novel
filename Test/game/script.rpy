@@ -73,6 +73,7 @@ label gender_choice:
 
 label common:
     
+    play music "prolog.wav"
     scene bg room
     show mc happy at left_pos 
 
@@ -94,6 +95,9 @@ label common:
     hide mc normal
     "Beberapa saat kemudian aku lihat sebuah artikel yang menarik perhatian ku"
     show mc shock at left_pos
+
+    stop music
+    play sound "shock.mp3"
     main "Banyak lulusan S1 nganggur?!"
     hide mc shock
     "Menurut artikel, tertulis bahwa \"Terjadi peningkatan jumlah pengangguran belakangan ini terutama para mahasiswa lulusan S1. Hal ini disebabkan karena sedikitnya jumlah lowongan kerja yang tidak mencukupi permintaan banyak pelamar pekerja\""
@@ -103,6 +107,7 @@ label common:
     "Dengan cekatan aku mencari lowongan pekerjaan di LinkGan yang sesuai dengan studi ku"
     "Beberapa jam aku habiskan untuk mencari lowongan pekerjaan sampai aku melihat sebuah post dari perusahaan PT.NJB"
     "Menurut post itu mereka membuka 5 posisi yang berhubungan dengan akuntansi"
+    play music "prolog.wav"
     show mc normal at left_pos
     main "Wah, pas banget ada posisi di PT.NJB yang sesuai sama prodi ku. Mending aku coba dulu daftar disini"
     hide mc normal
@@ -115,6 +120,7 @@ label common:
     main "Sebaiknya aku ambil yang mana ya?"
     hide mc 
     window hide
+    
 
     while True:
         menu:
@@ -147,6 +153,7 @@ label interview:
     window hide
     hide mc
     
+    play sound "paperSd.mp3"
     if job == "Akuntan":
         show screen job_popup("images/lamAkun.png")
         with dissolve
@@ -189,7 +196,7 @@ label interview:
     "Setelah itu aku menghabiskan waktu luang ku untuk mempersiapkan diri jika tiba waktunya untuk aku interview"
     "Walaupun ini pengalaman yang asing untuk ku aku harus bisa melalui ini"
     "Akan kupastikan aku berhasil agar usaha ku selama ini tidak terbuang sia-sia"
-    
+    stop music
     
     scene black with dissolve
     show mc normal at left_pos
@@ -198,11 +205,12 @@ label interview:
     scene bg sky with dissolve
     "satu minggu kemudian"   
     scene bg room
+    play music "interview.wav"
     show mc confused at left_pos
     main "Lho Email dari siapa ini?" 
     hide mc
     window hide
-
+    
     if job == "Akuntan":
         show screen job_popup("images/mailAkun.png")
         with dissolve
@@ -265,6 +273,7 @@ label interview:
     hide hrd
     window hide
    
+    play sound "paperSd.mp3"
     if job == "Akuntan":
         show screen job_popup("images/jobAkun.png")
         with dissolve
@@ -303,6 +312,7 @@ label interview:
     show hrd normal
     hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
     hide mc normal
+    stop music
 
     if job == "Akuntan":
         jump accountant
@@ -316,6 +326,7 @@ label interview:
         jump business
 
     return
+
 
 
 
