@@ -1,6 +1,7 @@
 label business: 
+play music "kerja.mp3" loop
 scene bg sky
-"Pada hari pertama kamu masuk kerja, kamu langsung ditugaskan sebagai konsultan di perusahaan Jaya makmur yang bergerak di bidang manufaktur sejak tahun 2003. PT jaya Makmur sendiri saat ini memiliki mesin otomatis dalam proses pembuatan furnitur rumah tangga. "
+"Pada hari pertama kamu masuk kerja, kamu langsung ditugaskan sebagai konsultan di perusahaan Jaya Makmur yang bergerak di bidang manufaktur sejak tahun 2003. PT Jaya Makmur sendiri saat ini memiliki mesin otomatis dalam proses pembuatan furnitur rumah tangga. "
 
 scene bg office 
 show mc normal at left_pos
@@ -39,6 +40,7 @@ staff "duh.... buat sekarang gimana ya..... diperbaiki atau beli unit baru ya?"
 hide mc normal
 hide staff
 window hide
+stop music
 while True:
     menu:
         "Memilih untuk diperbaiki":
@@ -48,23 +50,31 @@ while True:
 
 
 label badBusiness:
+    play music "aftershock.mp3" loop
     show mc normal at left_pos
     main "Sepertinya lebih baik diperbaiki pak, karena biaya yang dikeluarkan lebih sedikit dan lebih cepat pak"
     show staff normal
     staff "oooo betul juga, nanti saya sampaikan ke pihak keuangan yah....."
     hide mc normal
     hide staff
+    stop music
     if gender == "male":
         show bad mmc
     else:
         show bad fmc
-
+    play music "badend.flac"   
     "Dari keputusan yang kamu ambil kurang tepat, karena setelah diperbaiki pun mesin yang dimiliki masih tetap rusak dan membuat produksi tidak berjalan secara optimal.  "
     "sehingga dari hal tersebut membuat perusahaan mengalami profit loss setiap bulannya. "
+    stop music 
+    window hide
+    play music "cgbad.flac"
+    pause 9.0
+
 return
 
 
 label goodBusiness:
+    play music"interview.wav" loop
     show mc normal at left_pos
     main "sepertinya lebih baik diganti deh pak, dikarenakan unit yang sekarang sedang beroperasi punya usia yang sudah cukup tua"
     show staff shock
@@ -95,7 +105,8 @@ label goodBusiness:
     show staff normal
     staff " baiklah akan saya sampaikan dulu ke bagian procurement ya.... (pembelian)"
     hide staff
-
+    stop music 
+    play music "goodend.wav"
     if gender == "male":
         show good mmc
     else:
@@ -103,8 +114,13 @@ label goodBusiness:
 
     "Tak lama kemudian, pihak procurement menyetujui pembelian mesin produksi yang baru. Keputusan yang kamu berikan kepada staf produksi pun terbukti tepat"
     "Karena dari adanya unit produksi yang baru, jumlah produksi pun meningkat begitupun dari kualitas yang dihasilkan juga. Dan semenjak adanya unit baru menunjukan profit yang terus meningkat. "
+    stop music
+    window hide
+    play music "cggood.mp3"
+    pause 5.0
 
     return
+
 
 
 
