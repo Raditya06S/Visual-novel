@@ -1,4 +1,4 @@
-################################################################################
+﻿################################################################################
 ## Initialization
 ################################################################################
 
@@ -66,7 +66,7 @@ define gui.name_text_font =  "fonts/static/NotoSans-Medium.ttf"
 define gui.interface_text_font = "DejaVuSans.ttf"
 
 ## The size of normal dialogue text.
-define gui.text_size = 33
+define gui.text_size = 39
 
 ## The size of character names.
 define gui.name_text_size = 45
@@ -83,6 +83,9 @@ define gui.notify_text_size = 24
 ## The size of the game's title.
 define gui.title_text_size = 75
 
+#The outline for characther name 
+define gui.name_text_outlines = [ (4, "#f1f1f1", 0, 0) ]
+define gui.name_outline_scaling = "linear"
 
 ## Main and Game Menus #########################################################
 
@@ -132,6 +135,10 @@ define gui.namebox_tile = False
 ## center.
 define gui.dialogue_xpos = 402
 define gui.dialogue_ypos = 75
+
+## name input placement
+define gui.name_input_xpos = 402
+define gui.name_input_ypos = 0
 
 ## The maximum width of dialogue text, in pixels.
 define gui.dialogue_width = 1116
@@ -348,10 +355,10 @@ define gui.history_spacing = 0
 
 ## The position, width, and alignment of the label giving the name of the
 ## speaking character.
-define gui.history_name_xpos = 450
+define gui.history_name_xpos = 250
 define gui.history_name_ypos = -40
-define gui.history_name_width = 233
-define gui.history_name_xalign = 1.0
+define gui.history_name_width = 1000
+define gui.history_name_xalign = 0
 
 ## The position, width, and alignment of the dialogue text.
 define gui.history_text_xpos = 255
@@ -479,6 +486,3 @@ init python:
 
         gui.nvl_button_width = 1860
         gui.nvl_button_xpos = 30
-
-
-

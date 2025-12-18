@@ -1,4 +1,4 @@
-################################################################################
+﻿################################################################################
 ## Initialization
 ################################################################################
 
@@ -153,7 +153,17 @@ style narration_window:
     background Frame("images/UI/textboxB.png")
     xalign 0.5
     yalign 0.5
+    
+    
 
+style narration_text:
+    xalign 0.5
+    #textalign 0.5
+    yalign 0.5 
+    size 36
+    color "#ffffff"
+    justify True
+    
 style namebox:
     xpos gui.name_xpos
     xanchor gui.name_xalign
@@ -188,16 +198,26 @@ style say_dialogue:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#input
 
+style say_dialogue_text:
+    justify True
+
+
 screen input(prompt):
+    
     style_prefix "input"
 
-    window:
+    frame:
+        background Frame("images/UI/textboxb.png", Borders(25,25,25,25))
+        xalign 0.5
+        yalign 0.5
+        xpadding 500
+        ypadding 30
 
         vbox:
             xanchor gui.dialogue_text_xalign
-            xpos gui.dialogue_xpos
+            xpos gui.name_input_xpos
             xsize gui.dialogue_width
-            ypos gui.dialogue_ypos
+            ypos gui.name_input_ypos
 
             text prompt style "input_prompt"
             input id "input"
@@ -207,10 +227,12 @@ style input_prompt is default
 style input_prompt:
     xalign gui.dialogue_text_xalign
     properties gui.text_properties("input_prompt")
+    color'#fff'
 
 style input:
     xalign gui.dialogue_text_xalign
     xmaximum gui.dialogue_width
+    color '#fff'
 
 
 ## Choice screen ###############################################################
@@ -270,6 +292,9 @@ screen quick_menu():
                 text_style "menu2"
                 action Rollback()
 
+            textbutton "HISTORY":
+                text_style"menu2"
+                action ShowMenu("history")
 
             textbutton "SKIP":
                 text_style "menu2" 
@@ -409,10 +434,10 @@ screen main_menu():
 
     add gui.main_menu_background
 
-    text "Neraca Karier" xpos 0.65 ypos 0.78 anchor((0, 0)) :
-        size 100 
-        color gui.idle_color
-        outlines [ (absolute(1), "#0e0ef0f1", absolute(0), absolute(0))] 
+    #text "Neraca Karier" xpos 0.65 ypos 0.78 anchor((0, 0)) :
+        #size 100 
+        #color gui.idle_color
+        #outlines [ (absolute(1), "#0e0ef0f1", absolute(0), absolute(0))] 
     
 
     ## This empty frame darkens the main menu.
@@ -1176,6 +1201,7 @@ screen history():
 
         if not _history_list:
             label _("The dialogue history is empty.")
+
     
     add "gui/Backlog frame.png"
     
@@ -1249,6 +1275,7 @@ style history_label:
 
 style history_label_text:
     xalign 0.5
+    color '#fff'
 
 
 ## Help screen #################################################################

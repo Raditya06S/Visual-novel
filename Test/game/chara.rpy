@@ -1,8 +1,10 @@
 #Common
 default main = "Protagonist" 
-define narrator = Character(None, window_style="narration_window")
+define narrator = Character(None, window_style="narration_window", what_style="narration_text",
+window_auto_hide=True
+)
 
-define hrd = Character("Paul", color="#00fe37")
+define hrd = Character("Paul", color="#296436")
 image hrd confused = At(im.Scale("images/Chara/hrd_confused.png", 2300, 2300), Transform(xalign=0.5, yalign=0))
 image hrd happy = At(im.Scale("images/Chara/hrd_happy.png", 2300, 2300), Transform(xalign=0.5, yalign=0))
 image hrd normal = At(im.Scale("images/Chara/hrd_normal.png", 2300, 2300), Transform(xalign=0.5, yalign=0))
@@ -12,7 +14,7 @@ image hrd thinking = At(im.Scale("images/Chara/hrd_thinking.png", 2300, 2300), T
 define randP = Character("Orang misterius", color="#e81010")
 image randP = At(im.Scale("images/Chara/randP.png", 2300, 2300), Transform(xalign=0.5, yalign=0))
 
-define bos = Character("Bos Brando", color="#dcef0aff")
+define bos = Character("Bos Brando", color="#e8880bff")
 image bos confused = At(im.Scale("images/Chara/bos_confused.png", 2300, 2300), Transform(xalign=0.5, yalign=0))
 image bos happy = At(im.Scale("images/Chara/bos_happy.png", 2300, 2300), Transform(xalign=0.5, yalign=0))
 image bos normal = At(im.Scale("images/Chara/bos_normal.png", 2300, 2300), Transform(xalign=0.5, yalign=0))
@@ -24,11 +26,11 @@ image rekan happy = At(im.Scale("images/Chara/rekan_happy.png", 2700, 2200), Tra
 image rekan nervous = At(im.Scale("images/Chara/rekan_nervous.png", 2700, 2200), Transform(xalign=1, yalign=-1))
 image rekan shock = At(im.Scale("images/Chara/rekan_shock.png", 2700, 2200), Transform(xalign=1, yalign=-1))
 
-define kakak = Character("Kakak", color="#f88102f5")
+define kakak = Character("Kakak", color="#989608f5")
 image kakak happy = At(im.Scale("images/Chara/kakak_happy.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 image kakak normal = At(im.Scale("images/Chara/kakak_normal.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 
-define staffKopi = Character("Staff Coffe Shop", color="#80130b73")
+define staffKopi = Character("Staff Coffe Shop", color="#740c057a")
 image sk concerned = At(im.Scale("images/Chara/sk_concerned.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 image sk happy = At(im.Scale("images/Chara/sk_happy.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 image sk normal = At(im.Scale("images/Chara/sk_normal.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
@@ -45,8 +47,3 @@ image staff normal = At(im.Scale("images/Chara/staff_normal.png", 2000, 2000), T
 image staff happy = At(im.Scale("images/Chara/staff_happy.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 image staff shock = At(im.Scale("images/Chara/staff_shock.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
 image staff thinking = At(im.Scale("images/Chara/staff_thinking.png", 2000, 2000), Transform(xalign=0.5, yalign=-0.1))
-
-
-
-
-

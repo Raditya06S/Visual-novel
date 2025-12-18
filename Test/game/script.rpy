@@ -1,5 +1,6 @@
 default job = 0
 default gender = 'null'
+default name = 'null'
 transform left_pos:
     xalign 0.0
     yalign 1.0
@@ -32,49 +33,36 @@ screen job_popup(img):
         yalign 0.5
         
         
-
-    
-
-
-    
-
-
 label start:
 
     stop music fadeout 2.0
 
-    "Selamat datang di dunia visual novel"
-    "Disini anda dapat merasakan pengalaman dan mempelajari dunia kerja."
-    "Sebelum kita mulai, Siapa nama anda?"
+    call screen character_choose
+
+
+label name_input:
+
+    scene bg name
 
     while True:
         $ main = renpy.input("Masukkan nama:", default=main).strip()
-        if not main:
-            $ main = "Protagonist"
-        else:
-            "Namamu [main]?"
-            menu:
-                "Yes":
-                    "Next"
-                    jump gender_choice
-                "No":
-                    pass
-
-label gender_choice:
-    "Apa jenis kelaminmu?"
-    while True:
+        "Namamu [main]?"
         menu:
-            "Laki-laki":
-                $ gender = 'male'
+            "Yes":
                 jump common
-            "Perempuan":
-                $ gender = 'female'
-                jump common
+            "No":
+                pass
+
+
 
 label common:
-    
-    play music "prolog.wav"
+    scene black
+    with dissolve
+    pause 2.5
     scene bg room
+    with dissolve
+    pause 0.5
+    play music "prolog.wav"
     show mc happy at left_pos 
 
     main "Akhirnya!!!"
@@ -96,7 +84,6 @@ label common:
     "Beberapa saat kemudian aku lihat sebuah artikel yang menarik perhatian ku"
     show mc shock at left_pos
 
-    stop music
     play sound "shock.mp3"
     main "Banyak lulusan S1 nganggur?!"
     hide mc shock
@@ -107,7 +94,9 @@ label common:
     "Dengan cekatan aku mencari lowongan pekerjaan di LinkGan yang sesuai dengan studi ku"
     "Beberapa jam aku habiskan untuk mencari lowongan pekerjaan sampai aku melihat sebuah post dari perusahaan PT.NJB"
     "Menurut post itu mereka membuka 5 posisi yang berhubungan dengan akuntansi"
-    play music "prolog.wav"
+    window hide
+    with dissolve
+    
     show mc normal at left_pos
     main "Wah, pas banget ada posisi di PT.NJB yang sesuai sama prodi ku. Mending aku coba dulu daftar disini"
     hide mc normal
@@ -119,7 +108,7 @@ label common:
     show mc confused at left_pos
     main "Sebaiknya aku ambil yang mana ya?"
     hide mc 
-    window hide
+    
     
 
     while True:
@@ -196,20 +185,23 @@ label interview:
     "Setelah itu aku menghabiskan waktu luang ku untuk mempersiapkan diri jika tiba waktunya untuk aku interview"
     "Walaupun ini pengalaman yang asing untuk ku aku harus bisa melalui ini"
     "Akan kupastikan aku berhasil agar usaha ku selama ini tidak terbuang sia-sia"
+    window hide
+    with dissolve
     stop music
-    
     scene black with dissolve
     show mc normal at left_pos
     main "Oke lamaran udah dikirim, sekarang tinggal tunggu kabar dari HRD aja."
     hide mc normal
     scene bg sky with dissolve
-    "satu minggu kemudian"   
+    "Satu minggu kemudian"   
+    window hide
+    with dissolve
     scene bg room
     play music "interview.wav"
     show mc confused at left_pos
     main "Lho Email dari siapa ini?" 
     hide mc
-    window hide
+    
     
     if job == "Akuntan":
         show screen job_popup("images/mailAkun.png")
@@ -242,7 +234,8 @@ label interview:
         hide screen job_popup
         with dissolve
 
-    window show
+    window hide
+    with dissolve
 
     show mc happy at left_pos
     main "Oh, syukurlah aku masuk tahap interview "
@@ -263,15 +256,19 @@ label interview:
     "Setelah itu aku melanjutkan perkenalan diri dari riwayat pendidikan, pengalaman, keahlian, sampai pencapaian yang pernah saya capai."
     "Setelah itu pak Paul beberapa kali melemparkan pertanyan kepadaku, tapi dengan latihan dan riset yang telah lakukan dengan sebelumnya."
     "Aku berhasil melalui pertanyaan yang dilemparkan padaku dengan mudah."
+    window hide
+    with dissolve
+
     show hrd thinking
-    hrd "berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
+    hrd "Berdasarkan hasil screening data yang Anda berikan, interview dan penilaian internal kami,"
     show hrd happy
     hrd "Selamat [main] anda diterima di perusahaan kami, sebagai [job] "
     show hrd confused
     hrd "Berikut jobdesk yang nantinya akan dikerjakan selama Anda menjadi [job] ."
+    
     hide mc
     hide hrd
-    window hide
+    
    
     play sound "paperSd.mp3"
     if job == "Akuntan":
@@ -305,15 +302,15 @@ label interview:
         hide screen job_popup
         with dissolve
 
-
-    window show 
+    window hide
+    with dissolve
     show hrd thinking
     hrd "Apakah ada yang ingin ditanyakan?"  
     show hrd normal
     hrd "Kalau tidak ada maka Anda bisa bekerja mulai hari senin di minggu depan, Terima kasih atas kerja samanya"
     hide mc normal
     stop music
-
+    
     if job == "Akuntan":
         jump accountant
     elif job == "Auditor":
@@ -324,8 +321,15 @@ label interview:
         jump analyst
     elif job == "Konsultan Bisnis":
         jump business
+    
 
     return
+
+
+
+
+
+
 
 
 
